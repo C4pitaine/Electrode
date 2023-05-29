@@ -36,11 +36,11 @@ $font2: 'Nova Cut', cursive;
         }
     
         nav{
-            width:50%;
+            width:45%;
             height:100%;
             
     
-            @media all and (max-width:992px)
+            @media all and (max-width:1200px)
                 {
                     display: flex;
                     justify-content: flex-end;
@@ -51,7 +51,7 @@ $font2: 'Nova Cut', cursive;
                 list-style: none;
                 display: flex;
     
-                @media all and (max-width:992px)
+                @media all and (max-width:1200px)
                 {
                     display: none;
                 }
@@ -61,11 +61,30 @@ $font2: 'Nova Cut', cursive;
                     font-size: 30px;
                     line-height: 100px;
                 }
+                
     
                 li{
                     flex:1;
                     text-align: center;
-                
+
+                    div{
+                        display: inline-block;
+                        background-color: #181AD6;
+                        border: solid 1px white;
+                        margin: 0 5px;
+                        width: 106px;
+                        height:37px;
+                        position: relative;
+                        top:25%;
+                        left: 0;
+                    }
+
+                    #ticknav{
+                        position: relative;
+                        top:-25%;
+                        left:0;
+                    }
+
                     a{
                         color:white;
                         font-size: 22px;
@@ -85,7 +104,7 @@ $font2: 'Nova Cut', cursive;
                 cursor: pointer;
                 display: none;
     
-                @media all and (max-width:992px)
+                @media all and (max-width:1200px)
                 {
                     display: block;
                 }
@@ -148,9 +167,15 @@ $font2: 'Nova Cut', cursive;
         #homeartiste{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            height:35vh;
+            min-height:35vh;
+
+            @media all and (max-width:768px)
+            {
+                grid-template-columns: 1fr;
+            }
 
             #CDW,#MG,#DG{
+                height: 35vh;
                 background-position: center center;
                 background-size: cover;
                 display: flex;
