@@ -2,220 +2,330 @@
 
 $font1: 'Roboto', sans-serif;
 $font2: 'Nova Cut', cursive;
+$color: white;
+
+@mixin backgroundimg{
+    background-position: center center;
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+@mixin centre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin whiteR{
+    color: $color;
+    font-family: $font1;
+    font-weight: 400;
+}
 
 *{
     margin:0;
     padding:0;
 }
 
-.container{
-    width:100%;
-    height:100vh;
-    overflow: auto;
-    scroll-snap-type: y proximity;
+html,body{
+    height:100%;
+    .container{
+        width:100%;
+        height:100vh;
+        overflow: auto;
+        scroll-snap-type: y proximity;
 
-    /* nav */
+        /* nav */
 
-    header{
-        display: flex;
-        justify-content: space-between;
-        height: 100px;
-        width: 100%;
-        // background: linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
-        position: fixed;
-        top:0;
-        left: 0;
-        z-index: 101;
-    
-        h2{
-            margin-left:30px;
-            font-family: $font2;
-            font-size: 60px;
-            color:white;
-            line-height: 100px;
+        header{
+            display: flex;
+            justify-content: space-between;
+            height: 100px;
+            width: 100%;
+            background: linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
+            position: fixed;
+            top:0;
+            left: 0;
+            z-index: 101;
+        
+            h2{
+                margin-left:30px;
+                font-family: $font2;
+                font-size: 60px;
+                color: $color;
+                line-height: 100px;
+            }
+        
+            nav{
+                width:45%;
+                height:100%;
+                
+        
+                @media all and (max-width:1200px)
+                    {
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                    }
+        
+                ul{
+                    list-style: none;
+                    display: flex;
+        
+                    @media all and (max-width:1200px)
+                    {
+                        display: none;
+                    }
+        
+                    div{
+                        color: $color;
+                        font-size: 30px;
+                        line-height: 100px;
+                    }
+                    
+        
+                    li{
+                        flex:1;
+                        text-align: center;
+
+                        div{
+                            display: inline-block;
+                            background-color: #181AD6;
+                            border: solid 1px $color;
+                            margin: 0 5px;
+                            width: 106px;
+                            height:37px;
+                            position: relative;
+                            top:25%;
+                            left: 0;
+                        }
+
+                        #ticknav{
+                            position: relative;
+                            top:-25%;
+                            left:0;
+                        }
+
+                        a{
+                            @include whiteR();
+                            font-size: 22px;
+                            line-height: 100px;
+                            text-decoration: none;
+        
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+                /* menu burger */
+                #burger{
+                    width: 50px;
+                    margin-right: 15px;
+                    cursor: pointer;
+                    display: none;
+        
+                    @media all and (max-width:1200px)
+                    {
+                        display: block;
+                    }
+        
+                    .bar{
+                        width: 100%;
+                        height: 3px;
+                        background-color: $color;
+                        margin-bottom: 8px;
+                    }
+                }
+            }
         }
-    
-        nav{
-            width:45%;
-            height:100%;
-            
-    
+
+        .slide{
+            width:100%;
+            min-height:100vh;
+            position: relative;
+            scroll-snap-align: start;  
+            }
+
+        /* Home */
+        #home{
+            background: linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
+
+            /* Présentation Home */
+
+            #homepres{
+                width:100%;
+                height:65vh;
+                background-image: url(../photos/fond/concert-gd2d57751e_1280.jpg),url(../photos/fond/fond.png);
+                @include backgroundimg();
+                flex-direction: column;
+                @include centre();
+
+                h2{
+                    font-family: $font2;
+                    color:  $color;
+                    font-size: 70px;
+                    margin-bottom: 20px;
+                }
+                h3{
+                    @include whiteR();
+                    margin-bottom: 20px;
+                    font-weight: 400;
+                    font-size: 50px;
+                    
+                }
+                p{
+                    @include whiteR();
+                    font-size: 30px;
+                    
+                }
+            }
+
+            /* Home Artiste */
+            #homeartiste{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                min-height:35vh;
+
+                @media all and (max-width:768px)
+                {
+                    grid-template-columns: 1fr;
+                }
+
+                a{
+                    text-decoration: none;
+                    #CDW,#MG,#DG{
+                        height: 35vh;
+                        @include backgroundimg();
+                        flex-direction: column;
+                        @include centre();
+                    
+                        h4{
+                            @include whiteR();
+                            font-size: 30px;
+                            font-weight: black;
+                            
+                        }
+                        p{
+                            margin-top: 20px;
+                            @include whiteR();
+                            font-size: 20px;
+                            
+                        }
+                    }
+                    #CDW{
+                        background-image: url(../photos/artistes/43288664685_75ff191678_b.jpg),url(../photos/fond/fond.png);
+                    }
+                    #MG{
+                        background-image: url(../photos/artistes/28481723580_264d106b2a_b.jpg),url(../photos/fond/fond.png);
+                    }
+                    #DG{
+                        background-image: url(../photos/artistes/David_Guetta_.jpg),url(../photos/fond/fond.png);
+                    }
+                }
+
+                
+                
+            }
+        }
+        /* Infos */
+        #infos{
+            background: linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
+            display: flex;
+            flex-wrap: wrap;
             @media all and (max-width:1200px)
                 {
-                    display: flex;
-                    justify-content: flex-end;
-                    align-items: center;
+                    flex-direction: column;
                 }
-    
-            ul{
-                list-style: none;
-                display: flex;
-    
+
+            .fond{
+                width:100%;
+                background-image: url(../photos/fond/audience-gdf51d6e89_1280.jpg),url(../photos/fond/fond.png);
+                @include backgroundimg();
+                display: none;
+
+                @media all and (max-width:1200px)
+                {
+                    display: block;
+                    height:50vh;
+                }
+            }
+
+
+            /* Coté gauche */
+            .gauche{
+                width:50%;
+                .wrapper{
+                    width:80%;
+                    margin: 15% auto;
+
+                    h2{
+                        @include whiteR();
+                        font-size: 40px;
+                        margin-bottom: 25px;
+                    }
+
+                    p{
+                        @include whiteR();
+                        font-size: 18px;
+                        line-height: 35px;
+
+                        strong,b{
+                            font-size: 20px;
+                            font-weight: 900;
+                        }
+                    }
+
+                    div{
+                        margin: 25px 0 0 40px;
+                        display: flex;
+                        flex-direction: column;
+
+                        p{
+                            @include whiteR();
+                            font-size: 18px;
+                            line-height: 35px;
+                        }
+                        strong{
+                            @include whiteR();
+                            font-size: 18px;
+                            line-height: 35px;
+                            font-weight: 900;
+                        }
+                    }
+                    a{
+                        display: block;
+                        text-decoration: none;
+                        width:140px;
+                        height:44px;
+                        background-color: #FC143A;
+                        border: solid 1px white;
+                        margin: 10% auto;
+                        @include whiteR();
+                        @include centre();
+                    }
+                }
+
+                @media all and (max-width:1200px)
+                {
+                    width:100%;
+                }
+            }
+            /* Coté droit */
+            .droite{
+                width:50%;
+                background-image: url(../photos/fond/audience-gdf51d6e89_1280.jpg),url(../photos/fond/fondrouge.png);
+                @include backgroundimg();
+
                 @media all and (max-width:1200px)
                 {
                     display: none;
                 }
-    
-                div{
-                    color:white;
-                    font-size: 30px;
-                    line-height: 100px;
-                }
-                
-    
-                li{
-                    flex:1;
-                    text-align: center;
-
-                    div{
-                        display: inline-block;
-                        background-color: #181AD6;
-                        border: solid 1px white;
-                        margin: 0 5px;
-                        width: 106px;
-                        height:37px;
-                        position: relative;
-                        top:25%;
-                        left: 0;
-                    }
-
-                    #ticknav{
-                        position: relative;
-                        top:-25%;
-                        left:0;
-                    }
-
-                    a{
-                        color:white;
-                        font-size: 22px;
-                        line-height: 100px;
-                        font-family: $font1;
-                        text-decoration: none;
-    
-                        &:hover{
-                            text-decoration: underline;
-                        }
-                    }
-                }
-            }
-            #burger{
-                width: 50px;
-                margin-right: 15px;
-                cursor: pointer;
-                display: none;
-    
-                @media all and (max-width:1200px)
-                {
-                    display: block;
-                }
-    
-                .bar{
-                    width: 100%;
-                    height: 3px;
-                    background-color: white;
-                    margin-bottom: 8px;
-                }
             }
         }
-    }
-
-    .slide{
-        width:100%;
-        min-height:100vh;
-        position: relative;
-        scroll-snap-align: start;  
+        #tickets{
+            background-color: yellow;
         }
-
-    /* Home */
-    #home{
-        background: linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
-
-        /* Présentation Home */
-
-        #homepres{
-            width:100%;
-            height:65vh;
-            background-image: url(../photos/fond/concert-gd2d57751e_1280.jpg);
-            background-position: center center;
-            background-size: cover;
-            background-blend-mode: overlay;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            h2{
-                font-family: $font2;
-                color: white;
-                font-size: 70px;
-                margin-bottom: 20px;
-            }
-            h3{
-                font-family: $font1;
-                margin-bottom: 20px;
-                font-size: 50px;
-                color: white;
-            }
-            p{
-                font-family: $font1;
-                font-size: 30px;
-                color: white;
-            }
+        #contact{
+            background-color: orange;
         }
-
-        /* Home Artiste */
-        #homeartiste{
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            min-height:35vh;
-
-            @media all and (max-width:768px)
-            {
-                grid-template-columns: 1fr;
-            }
-
-            #CDW,#MG,#DG{
-                height: 35vh;
-                background-position: center center;
-                background-size: cover;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                background-blend-mode: overlay;
-                
-                h4{
-                    color:white;
-                    font-size: 30px;
-                    font-weight: black;
-                    font-family: $font1;
-                }
-                p{
-                    margin-top: 20px;
-                    color:white;
-                    font-size: 20px;
-                    font-family: $font1;
-                }
-            }
-            #CDW{
-                background-image: url(../photos/artistes/43288664685_75ff191678_b.jpg);
-            }
-            #MG{
-                background-image: url(../photos/artistes/28481723580_264d106b2a_b.jpg);
-            }
-            #DG{
-                background-image: url(../photos/artistes/David_Guetta_.jpg);
-            }
-            
-        }
-    }
-    #infos{
-        background-color: blue;
-    }
-    #tickets{
-        background-color: yellow;
-    }
-    #contact{
-        background-color: orange;
     }
 }
