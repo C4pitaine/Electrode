@@ -52,6 +52,11 @@ html,body{
                 font-size: 60px;
                 color: $color;
                 line-height: 100px;
+
+                @media all and (max-width:572px)
+                {
+                    font-size: 50px;
+                }
             }
         
             nav{
@@ -164,18 +169,28 @@ html,body{
                     color:  $color;
                     font-size: 70px;
                     margin-bottom: 20px;
+                    @media all and (max-width:572px)
+                    {
+                        font-size: 65px;
+                    }
                 }
                 h3{
                     @include whiteR();
                     margin-bottom: 20px;
                     font-weight: 400;
                     font-size: 50px;
-                    
+                    @media all and (max-width:572px)
+                    {
+                        font-size: 45px;
+                    }
                 }
                 p{
                     @include whiteR();
                     font-size: 30px;
-                    
+                    @media all and (max-width:572px)
+                    {
+                        font-size: 25px;
+                    }
                 }
             }
 
@@ -202,13 +217,11 @@ html,body{
                             @include whiteR();
                             font-size: 30px;
                             font-weight: black;
-                            
                         }
                         p{
                             margin-top: 20px;
                             @include whiteR();
                             font-size: 20px;
-                            
                         }
                     }
                     #CDW{
@@ -301,6 +314,10 @@ html,body{
                         margin: 10% auto;
                         @include whiteR();
                         @include centre();
+
+                        &:hover{
+                            text-decoration: underline;
+                        }
                     }
                 }
 
