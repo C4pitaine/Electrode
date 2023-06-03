@@ -19,6 +19,15 @@ $color: white;
     font-family: $font1;
     font-weight: 400;
 }
+@mixin redButton{
+    background-color: #DF0C1B;
+    border: solid 1px white;
+    text-decoration: none;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
 
 *{
     margin:0;
@@ -33,6 +42,7 @@ html,body{
         overflow: auto;
         scroll-snap-type: y proximity;
 
+        /* Index.html */
         /* nav */
 
         header{
@@ -86,27 +96,20 @@ html,body{
                         line-height: 100px;
                     }
                     
-        
                     li{
                         flex:1;
                         text-align: center;
 
-                        div{
-                            display: inline-block;
-                            background-color: #181AD6;
-                            border: solid 1px $color;
-                            margin: 0 5px;
-                            width: 106px;
-                            height:37px;
-                            position: relative;
-                            top:25%;
-                            left: 0;
-                        }
-
                         #ticknav{
-                            position: relative;
-                            top:-25%;
-                            left:0;
+                            display: block;
+                            text-decoration: none;
+                            width:106px;
+                            height:37px;
+                            background-color: #181AD6;
+                            border: solid 1px white;
+                            margin: 20% auto;
+                            @include whiteR();
+                            @include centre();
                         }
 
                         a{
@@ -234,9 +237,6 @@ html,body{
                         background-image: url(../photos/artistes/David_Guetta_.jpg),url(../photos/fond/fond.png);
                     }
                 }
-
-                
-                
             }
         }
         /* Infos */
@@ -251,6 +251,7 @@ html,body{
 
             .fond{
                 width:100%;
+                height:50vh;
                 background-image: url(../photos/fond/audience-gdf51d6e89_1280.jpg),url(../photos/fond/fond.png);
                 @include backgroundimg();
                 display: none;
@@ -258,7 +259,6 @@ html,body{
                 @media all and (max-width:1200px)
                 {
                     display: block;
-                    height:50vh;
                 }
             }
 
@@ -305,19 +305,12 @@ html,body{
                         }
                     }
                     a{
-                        display: block;
-                        text-decoration: none;
                         width:140px;
                         height:44px;
-                        background-color: #FC143A;
-                        border: solid 1px white;
                         margin: 10% auto;
+                        @include redButton();
                         @include whiteR();
                         @include centre();
-
-                        &:hover{
-                            text-decoration: underline;
-                        }
                     }
                 }
 
@@ -339,10 +332,264 @@ html,body{
             }
         }
         #tickets{
-            background-color: yellow;
+            background: linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
         }
         #contact{
             background-color: orange;
+        }
+
+        /* Info.html */
+        
+        #infos01{
+            background: linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
+            display: flex;
+           
+            @media all and (max-width:1200px){
+                flex-direction: column;
+            }
+
+            .fond{
+                width: 100%;
+                height:50vh;
+                display: none;
+                background-image: url(../photos/fond/concert-gc9947de5f_1280.jpg),url(../photos/fond/fond.png);
+                @include backgroundimg();
+
+                @media all and (max-width:1200px){
+                    display: block;
+                }
+            }   
+
+            /* Info01 Gauche */
+            #IG01{
+                min-height: 100vh;
+                width:50%;
+            
+                .wrapper{
+                    height:100%;
+                    width: 80%;
+                    margin: 0 auto;
+                    overflow: hidden;
+                
+                    h2{
+                        @include whiteR();
+                        font-size: 40px;
+                        margin-bottom: 25px;
+                        margin-top:20%;
+                        @media all and (max-width:1200px){
+                            margin-top:5%;
+                        }
+                    }
+                    p{
+                        font-size: 18px;
+                        line-height: 35px;
+                        @include whiteR();
+                        margin-bottom: 30px;
+
+                        strong{
+                            font-weight: 900;
+                        }
+                    }
+                    div{
+                        display: flex;
+                        height:10vh;
+                        justify-content: center;
+                        align-items: center;
+                        svg{
+                            font-size: 1.5em;
+                            fill: $color;
+                        }
+                    }
+                }
+                @media all and (max-width:1200px){
+                    width: 100%;
+                }
+            }
+            /* Info01 Droit*/
+            #ID01{
+                min-height:100vh;
+                width:50%;
+                background-image: url(../photos/fond/concert-gc9947de5f_1280.jpg),url(../photos/fond/fondrouge.png);
+                @include backgroundimg();
+
+                @media all and (max-width:1200px){
+                    display: none;
+                }
+            }
+        }
+        #infos02{
+            background: linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
+            display: flex;
+           
+            @media all and (max-width:1200px){
+                flex-direction: column;
+            }
+
+            #IG02{
+                width:50%;
+                min-height:100vh;
+                background-image: url(../photos/fond/audience-g0961e977a_1280.jpg),url(../photos/fond/fondbleu.png);
+                @include backgroundimg();
+
+                @media all and (max-width:1200px){
+                    min-height:50vh;
+                    width:100%;
+                }
+            }
+
+            #ID02{
+                width:50%;
+                min-height:100vh;
+
+                @media all and (max-width:1200px){
+                    width:100%;
+                }
+
+                .wrapper{
+                    width:80%;
+                    height:100%;
+                    margin:0 auto;
+                    overflow: hidden;
+
+                    .up{
+                        height:10vh;
+                        margin-top:14%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        @media all and (max-width:1200px){
+                            margin-top:0;
+                        }
+
+                        svg{
+                            fill:$color;
+                            font-size: 1.5em;
+                        }
+                    }
+
+                    p{
+                        @include whiteR();
+                        margin-bottom: 30px;
+                        line-height: 35px;
+                        font-size: 18px;
+
+                        &:nth-child(6){
+                            margin-bottom: 0;
+                        }
+
+                        strong,b{
+                            font-weight:900;
+                        }
+                    }
+
+                    .down{
+                        height:10vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        svg{
+                            fill:$color;
+                            font-size: 1.5em;
+                        }
+                    }
+                }
+            }
+        }
+        #infos03{
+            background: linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
+            display: flex;
+
+            @media all and (max-width:1200px){
+                flex-direction: column;
+            }
+
+            .fond{
+                width:100%;
+                height:50vh;
+                background-image: url(../photos/fond/confetti-g0d6c6bd83_1280.jpg),url(../photos/fond/fond.png);
+                @include backgroundimg();
+                display: none;
+
+                @media all and (max-width:1200px){
+                    display: block;
+                }
+            }
+
+            #IG03{
+                width:50%;
+                min-height:100vh;
+
+                @media all and (max-width:1200px){
+                    width: 100%;
+                }
+
+                .wrapper{
+                    width:80%;
+                    height:100%;
+                    margin:0 auto;
+                    overflow: hidden;
+
+                    .up{
+                        height:10vh;
+                        margin-top:14%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        @media all and (max-width:1200px){
+                            margin-top:0;
+                        }
+
+                        svg{
+                            fill:$color;
+                            font-size: 1.5em;
+                        }
+                    }
+
+                    p{
+                        @include whiteR();
+                        font-size:18px;
+                        line-height: 35px;
+                        margin-bottom: 30px;
+                        strong,b{
+                            font-weight: 900;
+                        }
+                    }
+                    div{
+                        height: 10vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        a{
+                            @include redButton();
+                            @include whiteR();
+                            @include centre();
+                            font-size: 20px;
+                            width:120px;
+                            height:37px;
+                            margin: 0 10px;
+                        
+                            &:nth-child(1){
+                                background-color: #181AD6;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            #ID03{
+                width:50%;
+                min-height: 100vh;
+                background-image: url(../photos/fond/confetti-g0d6c6bd83_1280.jpg),url(../photos/fond/fondrouge.png);
+                @include backgroundimg();
+
+                @media all and (max-width:1200px){
+                    display: none;
+                }
+            }
         }
     }
 }
