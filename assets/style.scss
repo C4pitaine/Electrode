@@ -21,7 +21,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
     font-weight: 400;
 }
 @mixin redButton{
-    background-color: #DF0C1B;
+    background-color: #FC143A;
     border: solid 1px white;
     text-decoration: none;
     @include whiteR();
@@ -498,8 +498,217 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             @include redButton();
         }
     }
+    /* Contact */
     #contact{
         background:$background;
+        background-image: url(../photos/fond/contactfond.jpg),url(../photos/fond/fond.png);
+        @include backgroundimg();
+        
+        .wrapper{
+            width:90%;
+            margin: 0 auto;
+            @include centre();
+            @media all and (max-width: 1200px){
+                flex-direction: column;
+            }
+            
+            /* Contact Gauche */
+            #contactG{
+                width:40%;
+                margin-top: 150px;
+                
+                @media all and (max-width: 1200px){
+                    margin-top: 20px;
+                    width:100%;
+                    order: 1;
+                }
+
+                /* Top : Info supplémentaire + Social Media */
+                #top{
+                    display: flex;
+                    width:100%;
+                    fill: $color;
+                    color: $color;
+                    @media all and (max-width: 1200px){
+                        flex-direction: column;
+                    }
+
+                    /* Localisation + Calendar */
+                    #infoSupp{
+                        display: flex;
+                        flex-direction: column;
+                        width:50%;
+                        
+                        @media all and (max-width: 1200px){
+                            width:100%;
+                        }
+
+                        h6{
+                            font-size: 25px;
+                            @include whiteR();
+                            text-align: center;
+                            margin-top:30px;
+                            @media all and (max-width: 1200px){
+                                margin-left: 20px;
+                            }
+                        }
+                        svg{
+                            font-size: 3em;
+                            margin-top:30px;
+                        }
+
+                        #loca{
+                            display: flex;
+                            flex-direction: column;
+                            
+                            div{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+
+                                @media all and (max-width: 1200px){
+                                    flex-direction: row;
+                                    width:100%;
+                                    margin: 0 auto;
+                                }
+                            }
+                            
+                        }
+                        #calend{
+                            display: flex;
+                            flex-direction: column;
+                            
+                            div{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+
+                                @media all and (max-width: 1200px){
+                                    flex-direction: row;
+                                    width:100%;
+                                    margin: 0 auto;
+                                }
+                            }
+                        }
+                    }
+
+                    
+                    #socialsM{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        width:50%;
+                        @media all and (max-width: 1200px){
+                            justify-content: space-between;
+                            flex-direction: row;
+                            width:50%;
+                            margin: 20px auto;
+                        }
+                        @media all and (max-width:768px){
+                            width:100%;
+                        }
+
+                        a{
+                            display: flex;
+                            justify-content: flex-end;
+                            width:fit-content;
+                            
+                            svg{
+                                font-size: 3em;
+                                margin-top: 30px;
+                            }
+                        }
+                    }
+                }
+                /* Sponsor */
+                #spons{
+                    width:100%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    margin-top:50px;
+
+                    @media all and (max-width:768px){
+                        flex-direction: column;
+                    }
+
+                    img{
+                        width:150px;
+                        height:85px;
+                        margin: 20px auto;
+                        object-fit: none;
+                    }
+                }
+            }
+            /* Formulaire */
+            #formulaire{
+                width:60%;
+                margin-top: 150px;
+                border-radius: 15px;
+                background-color: rgb(255, 255, 255,50%);
+                @media all and (max-width: 1200px){
+                    width:100%;
+                    order: 0;
+                }
+
+                h2{
+                    @include whiteR();
+                    font-size: 40px;
+                    margin:15px;
+                }
+
+                form{
+                    width:100%;
+                    margin: 20px 0;
+                    .form-group{
+                        margin: 30px 0;
+                        text-align: center;
+    
+                        input{
+                            width:80%;
+                            height:40px;
+                            border: none;
+                            border-left: solid 1px $color;
+                            border-bottom: solid 1px $color;
+                            background-color: transparent;
+                            padding-left: 10px;
+                            
+                            &::placeholder{
+                                font-size: 25px;
+                                @include whiteR();
+                                font-weight: 900;
+                                opacity: 1;
+                            }
+    
+                            &[type="submit"]{
+                                @include redButton();
+                                border: solid 1px $color;
+                                font-size: 25px;
+                                width: 120px;
+                                height:50px;
+                                margin: 0 auto;
+                            }
+                        }
+                        textarea{
+                            width:80%;
+                            height:250px;
+                            border: none;
+                            border-left: solid 1px $color;
+                            border-bottom: solid 1px $color;
+                            background-color: transparent;
+                            resize: none;
+                            padding-left: 10px;
+    
+                            &::placeholder{
+                                font-size: 25px;
+                                @include whiteR();
+                                font-weight: 900;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     /* Info.html */
@@ -762,6 +971,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
     #tickets_achat{
         background:$background;
         overflow: hidden;
+        scroll-snap-align: none;
 
         .wrapper{
             width:90%;
@@ -812,10 +1022,13 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     img{
                         width:100%;
                         height:322px;
-                        object-fit: contain;
+                        object-fit: cover;
+                        
                         border-radius: 15px 15px 0 0;
                         border: solid 1px $color;
                     }
+
+                    
                     /* ticket description */
                     .ticketC{
                         width:100%;
@@ -885,9 +1098,9 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
 
             .grille{
                 display: grid;
-                height:70vh;
+                min-height:70vh;
                 grid-template-columns: repeat(4,1fr);
-                align-items: center;
+                
                 gap:30px;
 
                 @media all and (max-width:1200px)
@@ -912,6 +1125,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     }
                     .front_card{
                         margin-bottom: 25px;
+                        backface-visibility: hidden;
                         h4{
                             @include whiteR();
                             @include centre();
@@ -932,23 +1146,22 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     }
                     .back_card{
                         transform: rotateY(180deg);
+                        background-color: #391060;
+                        border-radius: 15px 15px 0 0;
+                        box-shadow: 0 0 5px black;
 
                         h4{
                             @include whiteR();
                             @include centre();
                             font-size: 30px;
+                            margin-top: 25px;
     
                             &:nth-child(1){
                                 font-weight: 900;
                             }
                         }
                         .descript{
-                            width:100%;
-                            height: 725px;
-                            object-fit: cover;
-                            margin: 20px auto 0 auto;
-                            border-radius: 15px 15px 0 0;
-                            background-color: rgb(255, 255, 255,50%);
+                            width: 100%;
                         }
                     }
                     .front_card,.back_card{
@@ -958,6 +1171,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         width:100%;
                         height:100%;
                         backface-visibility: hidden;
+                        -moz-backface-visibility: hidden;
                     }
                 }
             }
@@ -967,6 +1181,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
     #cdw{
         background: $background;
         overflow: hidden;
+        scroll-snap-align: none;
 
         .wrapper{
             width:90%;
@@ -1046,6 +1261,8 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         
                         a{
                             margin:10px 0;
+                            text-align: center;
+                            width:fit-content;
                             svg{
                                 font-size: 4em;
                                 fill:$color;
