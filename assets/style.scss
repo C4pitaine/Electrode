@@ -1232,7 +1232,7 @@ footer{
                     }
                 }
                 .back_card{
-                    
+                    background-color: rgb(255, 255, 255,20%);
                     transform: rotateY(180deg);
                     border-radius: 15px 15px 0 0;
                     display: flex;
@@ -1286,10 +1286,11 @@ footer{
                 flex-direction: column;
             }
 
-            img{
+            .img{
                 width:500px;
                 height:80vh;
-                object-fit: cover;
+                background-image: url(../photos/artistes/Charlotte-de-Witte_header-1-1400x840.webp),url(../photos/fond/fond.png);
+                @include backgroundimg();
                 border-radius: 15px 15px 0 0;
 
                 @media all and (max-width:1200px){
