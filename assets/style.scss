@@ -15,6 +15,12 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
     justify-content: center;
     align-items: center;
 }
+@mixin centreWrapper{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 @mixin whiteR{
     color: $color;
     font-family: $font1;
@@ -356,11 +362,16 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             .wrapper{
                 width:80%;
                 margin: 0 auto;
+                @include centreWrapper();
 
                 h2{
                     @include whiteR();
                     font-size: 40px;
                     margin-top:110px;
+
+                    @media all and (max-width:1200px){
+                        margin-top: 10px;
+                    }
                 }
 
                 p{
@@ -421,6 +432,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
     #tickets{
         background: $background;
         overflow: hidden;
+        @include centreWrapper();
         .banner{
             margin-top:110px;
             height:100px;
@@ -506,6 +518,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
         
         .wrapper{
             width:90%;
+            min-height: 100vh;
             margin: 0 auto;
             @include centre();
             @media all and (max-width: 1200px){
@@ -515,7 +528,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             /* Contact Gauche */
             #contactG{
                 width:40%;
-                margin-top: 150px;
+                margin-top: 100px;
                 
                 @media all and (max-width: 1200px){
                     margin-top: 20px;
@@ -642,7 +655,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             /* Formulaire */
             #formulaire{
                 width:60%;
-                margin-top: 150px;
+                margin-top: 100px;
                 border-radius: 15px;
                 background-color: rgb(255, 255, 255,50%);
                 @media all and (max-width: 1200px){
@@ -743,6 +756,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 width: 80%;
                 margin: 0 auto;
                 overflow: hidden;
+                @include centreWrapper();
             
                 h2{
                     @include whiteR();
@@ -822,9 +836,9 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
 
             .wrapper{
                 width:80%;
-                height:100%;
                 margin:0 auto;
                 overflow: hidden;
+                @include centreWrapper();
 
                 .up{
                     height:10vh;
@@ -903,20 +917,15 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
 
             .wrapper{
                 width:80%;
-                height:100%;
                 margin:0 auto;
                 overflow: hidden;
+                @include centreWrapper();
 
                 .up{
                     height:10vh;
-                    margin-top:100px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-
-                    @media all and (max-width:1200px){
-                        margin-top:0;
-                    }
 
                     svg{
                         fill:$color;
@@ -967,7 +976,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             }
         }
     }
-    /* Achat Tickets */
+    /* Achat Tickets (ticket.html) */
     #tickets_achat{
         background:$background;
         overflow: hidden;
@@ -976,6 +985,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
         .wrapper{
             width:90%;
             margin:0 auto;
+            @include centreWrapper();
 
             .titre{
                 margin-top: 125px;
@@ -1210,6 +1220,9 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 .texte{
                     width:100%;
                     margin-left: 25px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
                     h4{
                         margin-top:20px;
                         font-size:40px;
