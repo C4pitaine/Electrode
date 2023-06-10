@@ -35,56 +35,131 @@
     <div class="slide" id="juillet07">
         <div class="wrapper">
             <h3>07 JUILLET</h3>
-            <div class="grille">
+            <div class="line_up">
                 <div class="inner_card">
                     <div class="front_card">
                         <img src="photos/figma/charlotte.png" alt="Charlotte De Witte Image">
                     </div>
                     <div class="back_card">
                         <h4>Charlotte De Witte</h4>
-                        <div class="descript">
-
-                        </div>
+                        <a href="cdw.html">Découvrir</a>
                     </div>
                 </div>
                 <div class="inner_card">
                     <div class="front_card">
-                        <img src="photos/figma/netsky.png" alt="Charlotte De Witte Image">
+                        <img src="photos/figma/netsky.png" alt="Netsky Image">
                     </div>
                     <div class="back_card">
                         <h4>Netsky</h4>
-                        <div class="descript">
-                            
-                        </div>
+                        <a href="#">Découvrir</a>
                     </div>
                 </div>
                 <div class="inner_card">
                     <div class="front_card">
-                        <img src="photos/figma/hysta.png" alt="Charlotte De Witte Image">
+                        <img src="photos/figma/hysta.png" alt="Hysta Image">
                     </div>
                     <div class="back_card">
                         <h4>Hysta</h4>
-                        <div class="descript">
-                            
-                        </div>
+                        <a href="#">Découvrir</a>
                     </div>
                 </div>
                 <div class="inner_card">
                     <div class="front_card">
-                        <img src="photos/figma/petitb.png" alt="Charlotte De Witte Image">
+                        <img src="photos/figma/petitb.png" alt="Petit Biscuit Image">
                     </div>
                     <div class="back_card">
                         <h4>Petit Biscuit</h4>
-                        <div class="descript">
-                            
-                        </div>
+                        <a href="#">Découvrir</a>
                     </div>
                 </div>
             </div>
         </div>  
     </div>
     <div class="slide" id="juillet08">
-
+        <div class="wrapper">
+            <h3>08 JUILLET</h3>
+            <div class="line_up">
+                <div class="inner_card">
+                    <div class="front_card">
+                        <img src="photos/figma/martingarrix.png" alt="Martin Garrix Image">
+                    </div>
+                    <div class="back_card">
+                        <h4>Martin Garrix</h4>
+                        <a href="cdw.html">Découvrir</a>
+                    </div>
+                </div>
+                <div class="inner_card">
+                    <div class="front_card">
+                        <img src="photos/figma/calvinharris.png" alt="Calvin Harris Image">
+                    </div>
+                    <div class="back_card">
+                        <h4>Calvin Harris</h4>
+                        <a href="#">Découvrir</a>
+                    </div>
+                </div>
+                <div class="inner_card">
+                    <div class="front_card">
+                        <img src="photos/figma/chainsmokers.png" alt="The Chainsmokers Image">
+                    </div>
+                    <div class="back_card">
+                        <h4>The Chainsmokers</h4>
+                        <a href="#">Découvrir</a>
+                    </div>
+                </div>
+                <div class="inner_card">
+                    <div class="front_card">
+                        <img src="photos/figma/tiesto.png" alt="Tiësto Image">
+                    </div>
+                    <div class="back_card">
+                        <h4>Tiësto</h4>
+                        <a href="#">Découvrir</a>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div class="slide" id="juillet07">
+        <div class="wrapper">
+            <h3>09 JUILLET</h3>
+            <div class="line_up">
+                <div class="inner_card">
+                    <div class="front_card">
+                        <img src="photos/figma/davidguetta.png" alt="David Guetta Image">
+                    </div>
+                    <div class="back_card">
+                        <h4>David Guetta</h4>
+                        <a href="cdw.html">Découvrir</a>
+                    </div>
+                </div>
+                <div class="inner_card">
+                    <div class="front_card">
+                        <img src="photos/figma/marshmello.png" alt="Marshmello Image">
+                    </div>
+                    <div class="back_card">
+                        <h4>Marshmello</h4>
+                        <a href="#">Découvrir</a>
+                    </div>
+                </div>
+                <div class="inner_card">
+                    <div class="front_card">
+                        <img src="photos/figma/deadmau5.png" alt="Deadmau5 Image">
+                    </div>
+                    <div class="back_card">
+                        <h4>Deadmau5</h4>
+                        <a href="#">Découvrir</a>
+                    </div>
+                </div>
+                <div class="inner_card">
+                    <div class="front_card">
+                        <img src="photos/figma/zedd.png" alt="Zedd Image">
+                    </div>
+                    <div class="back_card">
+                        <h4>Zedd</h4>
+                        <a href="#">Découvrir</a>
+                    </div>
+                </div>
+            </div>
+        </div> 
     </div>
     <footer>
         <div id="legal">
@@ -139,6 +214,15 @@
                 header.classList.toggle("menuOpened")
             })
         })
+
+        const rotate = document.querySelectorAll('.inner_card')
+
+        rotate.forEach(elem=>{
+            elem.addEventListener('click',()=>{
+                elem.style.transform = "perspective(600px) rotateY(180deg)"
+            })
+        })
+        
 
     </script>
 </body>
