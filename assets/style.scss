@@ -335,20 +335,6 @@ header.menuOpened{
             flex-direction: column;
         }
 
-    .fond{
-        width:100%;
-        height:50vh;
-        background-image: url(../photos/fond/audience-gdf51d6e89_1280.jpg),url(../photos/fond/fond.png);
-        @include backgroundimg();
-        display: none;
-
-        @media all and (max-width:1200px)
-        {
-            display: block;
-        }
-    }
-
-
     /* Coté gauche */
     .gauche{
         width:50%;
@@ -407,6 +393,7 @@ header.menuOpened{
         @media all and (max-width:1200px)
         {
             width:100%;
+            order:1;
         }
     }
     /* Coté droit */
@@ -417,7 +404,9 @@ header.menuOpened{
 
         @media all and (max-width:1200px)
         {
-            display: none;
+            width:100%;
+            height:50vh;
+            order: 0;
         }
     }
 }
@@ -829,18 +818,6 @@ footer{
         flex-direction: column;
     }
 
-    .fond{
-        width: 100%;
-        height:50vh;
-        display: none;
-        background-image: url(../photos/fond/concert-gc9947de5f_1280.jpg),url(../photos/fond/fond.png);
-        @include backgroundimg();
-
-        @media all and (max-width:1200px){
-            display: block;
-        }
-    }   
-
     /* Info 01 Côté Gauche */
     #IG01{
         min-height: 100vh;
@@ -885,17 +862,20 @@ footer{
         }
         @media all and (max-width:1200px){
             width: 100%;
+            order: 1;
         }
     }
     /* Info01 Côté Droit*/
     #ID01{
-        min-height:100vh;
+        height:100vh;
         width:50%;
         background-image: url(../photos/fond/concert-gc9947de5f_1280.jpg),url(../photos/fond/fondrouge.png);
         @include backgroundimg();
 
         @media all and (max-width:1200px){
-            display: none;
+            order: 0;
+            width: 100%;
+            height:50vh;
         }
     }
 }
@@ -989,18 +969,6 @@ footer{
     @media all and (max-width:1200px){
         flex-direction: column;
     }
-
-    .fond{
-        width:100%;
-        height:50vh;
-        background-image: url(../photos/fond/confetti-g0d6c6bd83_1280.jpg),url(../photos/fond/fond.png);
-        @include backgroundimg();
-        display: none;
-
-        @media all and (max-width:1200px){
-            display: block;
-        }
-    }
     /* info 03 Côté gauche */
     #IG03{
         width:50%;
@@ -1008,6 +976,7 @@ footer{
 
         @media all and (max-width:1200px){
             width: 100%;
+            order:1;
         }
 
         .wrapper{
@@ -1062,12 +1031,14 @@ footer{
     /* info 03 Côté droite */
     #ID03{
         width:50%;
-        min-height: 100vh;
+        height: 100vh;
         background-image: url(../photos/fond/confetti-g0d6c6bd83_1280.jpg),url(../photos/fond/fondrouge.png);
         @include backgroundimg();
 
         @media all and (max-width:1200px){
-            display: none;
+            order:0;
+            width:100%;
+            height:50vh;
         }
     }
 }
