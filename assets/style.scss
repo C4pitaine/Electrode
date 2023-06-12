@@ -422,8 +422,8 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
         overflow: hidden;
         @include centreWrapper();
         .banner{
-            margin-top:110px;
-            height:100px;
+            margin:110px 0 50px 0;
+            height:60px;
             width:100%;
             background-color: rgb(255, 255, 255,50%);
             display: flex;
@@ -438,13 +438,14 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 }
             }
 
-            .text,.text2{
+            .text{
+                transform: translateX(-100%);
                 white-space: nowrap;
-                font-size: 50px;
-                margin: 0 20px;
+                font-size: 30px;
                 animation-name: Scroll;
                 animation-iteration-count: infinite;
-                animation-duration: 2s;
+                animation-duration: 18s;
+                animation-fill-mode: both;
                 animation-timing-function: linear;
                 @include whiteR();
             }
@@ -454,7 +455,8 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             
 
             &:last-child{
-                margin-top: 0;
+                margin: 50px 0 0 0;
+                
 
                 @keyframes Scrollinverse{
                     0%{
@@ -464,13 +466,10 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         transform: translateX(-100%);
                     }
                 }
-                .text,.text2{
-                    white-space: nowrap;
-                    font-size: 40px;
-                    margin: 0 20px;
+                .text{
                     animation-name: Scrollinverse;
                     animation-iteration-count: infinite;
-                    animation-duration: 2s;
+                    animation-duration: 18s;
                     animation-timing-function: linear;
                 }
             }
@@ -658,6 +657,9 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                             display: flex;
                             justify-content: flex-end;
                             width:fit-content;
+                            &:hover svg{
+                                fill: blueviolet;
+                            }
                             
                             svg{
                                 font-size: 3em;
@@ -843,6 +845,10 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     display: block;
                     width: fit-content;
                     margin:20px 20px 20px 0;
+
+                    &:hover svg{
+                        fill: blueviolet;
+                    }
                     svg{
                         font-size: 3em;
                         fill:$color;
@@ -1084,7 +1090,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
         #ID03{
             width:50%;
             height: 100vh;
-            background-image: url(../photos/fond/confetti-g0d6c6bd83_1280.jpg),url(../photos/fond/fondrouge.png);
+            background-image: url(../photos/fond/confetti.jpg),url(../photos/fond/fondrouge.png);
             @include backgroundimg();
 
             @media all and (max-width:1200px){
@@ -1389,6 +1395,10 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                             margin:10px 0;
                             text-align: center;
                             width:fit-content;
+
+                            &:hover svg{
+                                fill: blueviolet;
+                            }
                             svg{
                                 font-size: 4em;
                                 fill:$color;
