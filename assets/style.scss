@@ -1256,7 +1256,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 /* Carte Complète */
                 .inner_card{
                     width:320px;
-                    height:725px;
+                    height:80vh;
                     margin: 20px;
                     position: relative;
                     transform: perspective(600px);
@@ -1348,6 +1348,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
 
                     @media all and (max-width:1200px){
                         width:100%;
+                        height:40vh !important;
                     }
                 }
                 .texte{
