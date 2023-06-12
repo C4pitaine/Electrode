@@ -364,6 +364,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     font-size: 18px;
                     line-height: 35px;
                     margin-top:25px;
+                    text-align: justify;
 
                     strong,b{
                         font-size: 20px;
@@ -380,6 +381,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         @include whiteR();
                         font-size: 18px;
                         line-height: 35px;
+                        text-align: left;
                     }
                     strong{
                         @include whiteR();
@@ -901,6 +903,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 margin: 0 auto;
                 overflow: hidden;
                 @include centreWrapper();
+                
             
                 h2{
                     @include whiteR();
@@ -916,6 +919,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     line-height: 35px;
                     @include whiteR();
                     margin-bottom: 30px;
+                    text-align: justify;
 
                     strong{
                         font-weight: 900;
@@ -1009,6 +1013,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     margin-bottom: 30px;
                     line-height: 35px;
                     font-size: 18px;
+                    text-align: justify;
 
                     &:nth-child(6){
                         margin-bottom: 0;
@@ -1074,6 +1079,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     font-size:18px;
                     line-height: 35px;
                     margin-bottom: 30px;
+                    text-align: justify;
                     strong,b{
                         font-weight: 900;
                     }
@@ -1256,7 +1262,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 /* Carte Complète */
                 .inner_card{
                     width:320px;
-                    height:80vh;
+                    height:725px;
                     margin: 20px;
                     position: relative;
                     transform: perspective(600px);
@@ -1367,6 +1373,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         font-size: 20px;
                         margin: 40px 0;
                         line-height: 35px;
+                        text-align: justify;
 
                         strong{
                             font-size: 22px;
