@@ -428,6 +428,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             background-color: rgb(255, 255, 255,50%);
             display: flex;
             align-items: center;
+            user-select: none;
 
             @keyframes Scroll{
                 0%{
@@ -448,12 +449,12 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 animation-fill-mode: both;
                 animation-timing-function: linear;
                 @include whiteR();
-            }
-            .text2{
-                font-weight: 900;
+
+                b{
+                    font-weight: 900;
+                }
             }
             
-
             &:last-child{
                 margin: 50px 0 0 0;
                 
@@ -595,6 +596,9 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                             @media all and (max-width: 1200px){
                                 margin-left: 20px;
                             }
+                            @media all and (max-width:422px){
+                                font-size: 20px;
+                            }
                         }
                         svg{
                             font-size: 3em;
@@ -628,6 +632,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                                 flex-direction: column;
                                 justify-content: center;
 
+                                
                                 @media all and (max-width: 1200px){
                                     flex-direction: row;
                                     width:100%;
@@ -855,8 +860,17 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     }
                 }
             }
+            #fictif{
+                margin: 20px;
+                text-align: center;
+                p{
+                    @include whiteR();
+                    font-size: 16px;
+                }
+            }
 
             .copyright{
+                
                 p{
                     font-size: 16px;
                     @include whiteR();
@@ -1161,7 +1175,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         border: solid 1px $color;
                     }
 
-                    
                     /* ticket description */
                     .ticketC{
                         width:100%;
@@ -1171,7 +1184,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         flex-direction: column;
                         border: solid 1px $color;
                         
-
                         h4{
                             font-size: 40px;
                             @include whiteR();
@@ -1250,12 +1262,22 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     transform: perspective(600px);
                     transform-style: preserve-3d;
                     transition: all 0.5s;
+                    cursor:pointer;
 
                     &:hover{
                         transform: perspective(600px) rotateY(180deg);
+
+                       
                     }
+
+                    @media all and (max-width:1024px){
+                        &:hover{
+                            transform: perspective(600px);
+                        }
+                    }
+                
                     .front_card{
-                        cursor:pointer;
+                        
                         img{
                             border-radius: 15px 15px 0 0;
                         }
@@ -1292,6 +1314,9 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         backface-visibility: hidden;
                     }
                 }  
+                .active{
+                    transform: perspective(600px) rotateY(180deg) !important;
+                }
             }
         }
     }
