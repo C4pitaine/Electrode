@@ -43,1087 +43,441 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
     padding:0;
 }
 
-/* Index.html */
-/* nav */
-
-header{
-    display: flex;
+.container{
+    width:100%;
+    height:100vh;
+    overflow: auto;
+    scroll-snap-type: y proximity;
     
-    height: 100px;
-    width: 100%;
-    background: $background;
-    position: fixed;
-    top:0;
-    left: 0;
-    z-index: 101;
-
-    h2{
-        margin-left:30px;
-        font-family: $font2;
-        font-size: 60px;
-        color: $color;
-        line-height: 100px;
-
-        @media all and (max-width:572px)
-        {
-            font-size: 50px;
-        }
-    }
-
-    nav{
-        width:80%;
-        height:100%;
+    /* Index.html */
+    /* nav */
+    header{
         display: flex;
-        justify-content: flex-end;
         
+        height: 100px;
+        width: 100%;
+        background: $background;
+        position: fixed;
+        top:0;
+        left: 0;
+        z-index: 101;
 
-        @media all and (max-width:1200px)
+        h2{
+            margin-left:30px;
+            font-family: $font2;
+            font-size: 60px;
+            color: $color;
+            line-height: 100px;
+
+            @media all and (max-width:572px)
             {
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
+                font-size: 50px;
             }
+        }
 
-        ul{
-            list-style: none;
+        nav{
+            width:80%;
+            height:100%;
             display: flex;
+            justify-content: flex-end;
+            
 
             @media all and (max-width:1200px)
-            {
-                display: none;
-            }
+                {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                }
 
-            div{
-                color: $color;
-                font-size: 30px;
-                line-height: 100px;
-            }
-            
-            li{
-                flex:1;
-                text-align: center;
-                a{
-                    @include whiteR();
-                    font-size: 22px;
+            ul{
+                list-style: none;
+                display: flex;
+
+                @media all and (max-width:1200px)
+                {
+                    display: none;
+                }
+
+                div{
+                    color: $color;
+                    font-size: 30px;
                     line-height: 100px;
-                    text-decoration: none;
-                    margin: 0 25px;
+                }
+                
+                li{
+                    flex:1;
+                    text-align: center;
+                    a{
+                        @include whiteR();
+                        font-size: 22px;
+                        line-height: 100px;
+                        text-decoration: none;
+                        margin: 0 25px;
 
-                    &:hover{
-                        text-decoration: underline;
+                        &:hover{
+                            text-decoration: underline;
+                        }
                     }
                 }
             }
-        }
-        /* menu burger */
-        #burger{
-            width: 50px;
-            margin-right: 15px;
-            cursor: pointer;
-            display: none;
-            
+            /* menu burger */
+            #burger{
+                width: 50px;
+                margin-right: 15px;
+                cursor: pointer;
+                display: none;
+                
 
-            @media all and (max-width:1200px)
-            {
-                display: block;
-            }
+                @media all and (max-width:1200px)
+                {
+                    display: block;
+                }
 
-            .bar{
-                transition: all 0.5s;
-                width: 100%;
-                height: 3px;
-                background-color: $color;
-                margin-bottom: 8px;
-            }
-        }
-    }
-    /* bouton ticket */ 
-    #ticknav{
-        display: flex;
-        justify-content: flex-end;
-        text-decoration: none;
-        width:106px;
-        height:37px;
-        font-size: 22px;
-        background-color: #181AD6;
-        border: solid 1px white;
-        margin: auto 25px;
-        @include whiteR();
-        @include centre();
-
-        &:hover{
-            text-decoration: underline;
-        }
-
-        @media all and (max-width:1200px){
-            display: none;
-        }
-    }
-}
-/* header quand menu burger ouvert */
-header.menuOpened{
-    background: none;
-
-    .bar{
-        
-        &:first-child{
-            transform: rotate(45deg) translate(5px,5px);
-        }
-        &:nth-child(2){
-            opacity: 0;
-        }
-        &:last-child{
-            transform: rotate(-45deg) translate(10px,-12px);
-        }
-    }
-}
-
-.slide{
-    width:100%;
-    min-height:100vh;
-    position: relative;  
-    }
-    
-    /* Menu burger ouvert */
-    #menu{
-        position: fixed;
-        top:0;
-        left:0;
-        z-index:100;
-        display: none;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: $background;
-
-        a{
-            display: flex;
-            height:75px;
-            @include whiteR();
-            font-size: 30px;
-            text-decoration: none;
-            margin: 20px;
-            position: relative;
-
-            &::before{
-                content:"";
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                width: 100px;
-                height: 1px;
-                z-index: 1;
-                background-color: $color;
-                transform: translateX(-50%);
-            }
-            &:last-child{
-                width:125px;
-                height:46px;
-                background-color: #181AD6;
-                border: solid 1px $color;
-                justify-content: center;
-                align-items: center;
-                &::before{
-                    content: "";
-                    width:0;
+                .bar{
+                    transition: all 0.5s;
+                    width: 100%;
+                    height: 3px;
+                    background-color: $color;
+                    margin-bottom: 8px;
                 }
             }
+        }
+        /* bouton ticket */ 
+        #ticknav{
+            display: flex;
+            justify-content: flex-end;
+            text-decoration: none;
+            width:106px;
+            height:37px;
+            font-size: 22px;
+            background-color: #181AD6;
+            border: solid 1px white;
+            margin: auto 25px;
+            @include whiteR();
+            @include centre();
 
             &:hover{
                 text-decoration: underline;
             }
-        }
-    }
-    .menuOpened#menu{
-        display: flex;
-    }
 
-/* Home */
-#home{
-    background: $background;
-
-    /* Présentation Home */
-
-    #homepres{
-        width:100%;
-        height:65vh;
-        background-image: url(../photos/fond/concert-gd2d57751e_1280.jpg),url(../photos/fond/fond.png);
-        @include backgroundimg();
-        flex-direction: column;
-        @include centre();
-
-        h2{
-            font-family: $font2;
-            color:  $color;
-            font-size: 70px;
-            margin-bottom: 20px;
-            @media all and (max-width:572px)
-            {
-                font-size: 65px;
-            }
-        }
-        h3{
-            @include whiteR();
-            margin-bottom: 20px;
-            font-weight: 400;
-            font-size: 50px;
-            @media all and (max-width:572px)
-            {
-                font-size: 45px;
-            }
-        }
-        p{
-            @include whiteR();
-            font-size: 30px;
-            @media all and (max-width:572px)
-            {
-                font-size: 25px;
+            @media all and (max-width:1200px){
+                display: none;
             }
         }
     }
+    /* header quand menu burger ouvert */
+    header.menuOpened{
+        background: none;
 
-    /* Home Artiste */
-    #homeartiste{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        min-height:35vh;
-
-        @media all and (max-width:768px)
-        {
-            grid-template-columns: 1fr;
-        }
-
-        a{
-            text-decoration: none;
-            #CDW,#MG,#DG{
-                height: 35vh;
-                @include backgroundimg();
-                flex-direction: column;
-                object-fit: cover;
-                @include centre();
+        .bar{
             
-                h4{
-                    @include whiteR();
-                    font-size: 30px;
-                    font-weight: black;
-                }
-                p{
-                    margin-top: 20px;
-                    @include whiteR();
-                    font-size: 20px;
-                }
+            &:first-child{
+                transform: rotate(45deg) translate(5px,5px);
             }
-            #CDW{
-                background-image: url(../photos/artistes/43288664685_75ff191678_b.jpg),url(../photos/fond/fond.png);
+            &:nth-child(2){
+                opacity: 0;
             }
-            #MG{
-                background-image: url(../photos/artistes/28481723580_264d106b2a_b.jpg),url(../photos/fond/fond.png);
-            }
-            #DG{
-                background-image: url(../photos/artistes/David_Guetta_.jpg),url(../photos/fond/fond.png);
+            &:last-child{
+                transform: rotate(-45deg) translate(10px,-12px);
             }
         }
     }
-}
-/* Infos */
-#infos{
-    background: $background;
-    display: flex;
-    flex-wrap: wrap;
-    @media all and (max-width:1200px)
-        {
-            flex-direction: column;
-        }
 
-    /* Coté gauche */
-    .gauche{
-        width:50%;
-        .wrapper{
-            width:80%;
-            margin: 0 auto;
-            @include centreWrapper();
-
-            h2{
-                @include whiteR();
-                font-size: 40px;
-                margin-top:110px;
-
-                @media all and (max-width:1200px){
-                    margin-top: 10px;
-                }
-            }
-
-            p{
-                @include whiteR();
-                font-size: 18px;
-                line-height: 35px;
-                margin-top:25px;
-
-                strong,b{
-                    font-size: 20px;
-                    font-weight: 900;
-                }
-            }
-
-            div{
-                margin: 25px 0 0 40px;
-                display: flex;
-                flex-direction: column;
-
-                p{
-                    @include whiteR();
-                    font-size: 18px;
-                    line-height: 35px;
-                }
-                strong{
-                    @include whiteR();
-                    font-size: 18px;
-                    line-height: 35px;
-                    font-weight: 900;
-                }
-            }
-            a{
-                width:140px;
-                height:44px;
-                margin: 10% auto;
-                @include redButton();
-            }
-        }
-
-        @media all and (max-width:1200px)
-        {
-            width:100%;
-            order:1;
-        }
-    }
-    /* Coté droit */
-    .droite{
-        width:50%;
-        background-image: url(../photos/fond/audience-gdf51d6e89_1280.jpg),url(../photos/fond/fondrouge.png);
-        @include backgroundimg();
-
-        @media all and (max-width:1200px)
-        {
-            width:100%;
-            height:50vh;
-            order: 0;
-        }
-    }
-}
-/* Tickets */
-#tickets{
-    background: $background;
-    overflow: hidden;
-    @include centreWrapper();
-    .banner{
-        margin-top:110px;
-        height:100px;
+    .slide{
         width:100%;
-        background-color: rgb(255, 255, 255,50%);
-        display: flex;
-        align-items: center;
-
-        @keyframes Scroll{
-            0%{
-                transform: translateX(-100%);
-            }
-            100%{
-                transform: translateX(0%);
-            }
-        }
-
-        .text,.text2{
-            white-space: nowrap;
-            font-size: 50px;
-            margin: 0 20px;
-            animation-name: Scroll;
-            animation-iteration-count: infinite;
-            animation-duration: 2s;
-            animation-timing-function: linear;
-            @include whiteR();
-        }
-        .text2{
-            font-weight: 900;
+        min-height:100vh;
+        position: relative; 
+        scroll-snap-align: start; 
         }
         
+        /* Menu burger ouvert */
+        #menu{
+            position: fixed;
+            top:0;
+            left:0;
+            z-index:100;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: $background;
 
-        &:last-child{
-            margin-top: 0;
+            a{
+                display: flex;
+                height:75px;
+                @include whiteR();
+                font-size: 30px;
+                text-decoration: none;
+                margin: 20px;
+                position: relative;
 
-            @keyframes Scrollinverse{
-                0%{
-                    transform: translateX(0%);
+                &::before{
+                    content:"";
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    width: 100px;
+                    height: 1px;
+                    z-index: 1;
+                    background-color: $color;
+                    transform: translateX(-50%);
                 }
-                100%{
-                    transform: translateX(-100%);
+                &:last-child{
+                    width:125px;
+                    height:46px;
+                    background-color: #181AD6;
+                    border: solid 1px $color;
+                    justify-content: center;
+                    align-items: center;
+                    &::before{
+                        content: "";
+                        width:0;
+                    }
+                }
+
+                &:hover{
+                    text-decoration: underline;
                 }
             }
+        }
+        .menuOpened#menu{
+            display: flex;
+        }
+
+    /* Home */
+    #home{
+        background: $background;
+
+        /* Présentation Home */
+
+        #homepres{
+            width:100%;
+            height:65vh;
+            background-image: url(../photos/fond/concert-gd2d57751e_1280.jpg),url(../photos/fond/fond.png);
+            @include backgroundimg();
+            flex-direction: column;
+            @include centre();
+
+            h2{
+                font-family: $font2;
+                color:  $color;
+                font-size: 70px;
+                margin-bottom: 20px;
+                @media all and (max-width:572px)
+                {
+                    font-size: 65px;
+                }
+            }
+            h3{
+                @include whiteR();
+                margin-bottom: 20px;
+                font-weight: 400;
+                font-size: 50px;
+                @media all and (max-width:572px)
+                {
+                    font-size: 45px;
+                }
+            }
+            p{
+                @include whiteR();
+                font-size: 30px;
+                @media all and (max-width:572px)
+                {
+                    font-size: 25px;
+                }
+            }
+        }
+
+        /* Home Artiste */
+        #homeartiste{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            min-height:35vh;
+
+            @media all and (max-width:768px)
+            {
+                grid-template-columns: 1fr;
+            }
+
+            a{
+                text-decoration: none;
+                #CDW,#MG,#DG{
+                    height: 35vh;
+                    @include backgroundimg();
+                    flex-direction: column;
+                    object-fit: cover;
+                    @include centre();
+                
+                    h4{
+                        @include whiteR();
+                        font-size: 30px;
+                        font-weight: black;
+                    }
+                    p{
+                        margin-top: 20px;
+                        @include whiteR();
+                        font-size: 20px;
+                    }
+                }
+                #CDW{
+                    background-image: url(../photos/artistes/43288664685_75ff191678_b.jpg),url(../photos/fond/fond.png);
+                }
+                #MG{
+                    background-image: url(../photos/artistes/28481723580_264d106b2a_b.jpg),url(../photos/fond/fond.png);
+                }
+                #DG{
+                    background-image: url(../photos/artistes/David_Guetta_.jpg),url(../photos/fond/fond.png);
+                }
+            }
+        }
+    }
+    /* Infos */
+    #infos{
+        background: $background;
+        display: flex;
+        flex-wrap: wrap;
+        @media all and (max-width:1200px)
+            {
+                flex-direction: column;
+            }
+
+        /* Coté gauche */
+        .gauche{
+            width:50%;
+            .wrapper{
+                width:80%;
+                margin: 0 auto;
+                @include centreWrapper();
+
+                h2{
+                    @include whiteR();
+                    font-size: 40px;
+                    margin-top:110px;
+
+                    @media all and (max-width:1200px){
+                        margin-top: 10px;
+                    }
+                }
+
+                p{
+                    @include whiteR();
+                    font-size: 18px;
+                    line-height: 35px;
+                    margin-top:25px;
+
+                    strong,b{
+                        font-size: 20px;
+                        font-weight: 900;
+                    }
+                }
+
+                div{
+                    margin: 25px 0 0 40px;
+                    display: flex;
+                    flex-direction: column;
+
+                    p{
+                        @include whiteR();
+                        font-size: 18px;
+                        line-height: 35px;
+                    }
+                    strong{
+                        @include whiteR();
+                        font-size: 18px;
+                        line-height: 35px;
+                        font-weight: 900;
+                    }
+                }
+                a{
+                    width:140px;
+                    height:44px;
+                    margin: 10% auto;
+                    @include redButton();
+                }
+            }
+
+            @media all and (max-width:1200px)
+            {
+                width:100%;
+                order:1;
+            }
+        }
+        /* Coté droit */
+        .droite{
+            width:50%;
+            background-image: url(../photos/fond/audience-gdf51d6e89_1280.jpg),url(../photos/fond/fondrouge.png);
+            @include backgroundimg();
+
+            @media all and (max-width:1200px)
+            {
+                width:100%;
+                height:50vh;
+                order: 0;
+            }
+        }
+    }
+    /* Tickets */
+    #tickets{
+        background: $background;
+        overflow: hidden;
+        @include centreWrapper();
+        .banner{
+            margin-top:110px;
+            height:100px;
+            width:100%;
+            background-color: rgb(255, 255, 255,50%);
+            display: flex;
+            align-items: center;
+
+            @keyframes Scroll{
+                0%{
+                    transform: translateX(-100%);
+                }
+                100%{
+                    transform: translateX(0%);
+                }
+            }
+
             .text,.text2{
                 white-space: nowrap;
-                font-size: 40px;
+                font-size: 50px;
                 margin: 0 20px;
-                animation-name: Scrollinverse;
+                animation-name: Scroll;
                 animation-iteration-count: infinite;
                 animation-duration: 2s;
                 animation-timing-function: linear;
+                @include whiteR();
             }
-        }
-    }
-    .wrapper{
-        width:90%;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
-        gap:30px;
-
-        @media all and (max-width:1200px)
-        {
-            grid-template-columns: 1fr 1fr;
-        }
-        @media all and (max-width:768px)
-        {
-            grid-template-columns: 1fr;
-        }
-
-        .card{
-            /* Ticket Name */
-            .ticketN{
-                margin-top: 30px;;
-                height:305px;
-                background-image: url(../photos/fond/ticket-g6e6bd675d_1280.jpg),url(../photos/fond/fondbleu.png);
-                @include backgroundimg();
-                border-radius: 15px 15px 0 0;
-                border: solid 1px $color;
-                @include centre();
-                flex-direction: column;
-
-                h4{
-                    @include whiteR();
-                    font-size: 40px;
-                }
-                p{
-                    margin-top: 50px;
-                    @include whiteR();
-                    font-size: 30px;
-                }
+            .text2{
+                font-weight: 900;
             }
-            .cardred{
-                background-image: url(../photos/fond/ticket-g6e6bd675d_1280.jpg),url(../photos/fond/fondrouge.png);
-            }
-
-            /*Ticket Description*/
-            .ticketD{
-                p{
-                    width:90%;
-                    margin: 0 auto;
-                    margin-top: 20px;
-                    @include whiteR();
-                    font-size: 22px;
-                    line-height: 35px;
-                    text-align: center;
-                }
-                b{
-                    font-weight: 900;
-                }
-            }
-        }
-    }
-    a{
-        width:316px;
-            height:55px;
-        font-size: 22px;
-        margin: 25px auto;
-        @include redButton();
-    }
-}
-/* Contact */
-#contact{
-    background:$background;
-    background-image: url(../photos/fond/contactfond.jpg),url(../photos/fond/fond.png);
-    @include backgroundimg();
-    
-    .wrapper{
-        width:90%;
-        min-height: 100vh;
-        margin: 0 auto;
-        @include centre();
-        @media all and (max-width: 1200px){
-            flex-direction: column;
-        }
-        
-        /* Contact Gauche */
-        #contactG{
-            width:40%;
-            margin-top: 100px;
             
-            @media all and (max-width: 1200px){
-                margin-top: 20px;
-                width:100%;
-                order: 1;
-            }
 
-            /* Top : Info supplémentaire + Social Media */
-            #top{
-                display: flex;
-                width:100%;
-                fill: $color;
-                color: $color;
-                @media all and (max-width: 1200px){
-                    flex-direction: column;
-                }
+            &:last-child{
+                margin-top: 0;
 
-                /* Localisation + Calendar */
-                #infoSupp{
-                    display: flex;
-                    flex-direction: column;
-                    width:50%;
-                    
-                    @media all and (max-width: 1200px){
-                        width:100%;
+                @keyframes Scrollinverse{
+                    0%{
+                        transform: translateX(0%);
                     }
-
-                    h6{
-                        font-size: 25px;
-                        @include whiteR();
-                        text-align: center;
-                        margin-top:30px;
-                        @media all and (max-width: 1200px){
-                            margin-left: 20px;
-                        }
-                    }
-                    svg{
-                        font-size: 3em;
-                        margin-top:30px;
-                    }
-                    /* Localisation */
-                    #loca{
-                        display: flex;
-                        flex-direction: column;
-                        
-                        div{
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-
-                            @media all and (max-width: 1200px){
-                                flex-direction: row;
-                                width:100%;
-                                margin: 0 auto;
-                            }
-                        }
-                        
-                    }
-                    /* calendrier */
-                    #calend{
-                        display: flex;
-                        flex-direction: column;
-                        
-                        div{
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-
-                            @media all and (max-width: 1200px){
-                                flex-direction: row;
-                                width:100%;
-                                margin: 0 auto;
-                            }
-                        }
+                    100%{
+                        transform: translateX(-100%);
                     }
                 }
-
-                /* Socials Media */
-                #socialsM{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    width:50%;
-                    @media all and (max-width: 1200px){
-                        justify-content: space-between;
-                        flex-direction: row;
-                        width:50%;
-                        margin: 20px auto;
-                    }
-                    @media all and (max-width:768px){
-                        width:100%;
-                    }
-
-                    a{
-                        display: flex;
-                        justify-content: flex-end;
-                        width:fit-content;
-                        
-                        svg{
-                            font-size: 3em;
-                            margin-top: 30px;
-                        }
-                    }
-                }
-            }
-            /* Sponsor */
-            #spons{
-                width:100%;
-                display: flex;
-                justify-content: space-evenly;
-                margin-top:50px;
-
-                @media all and (max-width:768px){
-                    flex-direction: column;
-                }
-
-                img{
-                    width:150px;
-                    height:85px;
-                    margin: 20px auto;
-                    object-fit: none;
+                .text,.text2{
+                    white-space: nowrap;
+                    font-size: 40px;
+                    margin: 0 20px;
+                    animation-name: Scrollinverse;
+                    animation-iteration-count: infinite;
+                    animation-duration: 2s;
+                    animation-timing-function: linear;
                 }
             }
         }
-        /* Formulaire */
-        #formulaire{
-            width:60%;
-            margin-top: 100px;
-            border-radius: 15px;
-            background-color: rgb(255, 255, 255,50%);
-            @media all and (max-width: 1200px){
-                width:100%;
-                order: 0;
-            }
-
-            h2{
-                @include whiteR();
-                font-size: 40px;
-                margin:15px;
-            }
-
-            form{
-                width:100%;
-                margin: 20px 0;
-                .form-group{
-                    margin: 30px 0;
-                    text-align: center;
-
-                    input{
-                        width:80%;
-                        height:40px;
-                        border: none;
-                        border-left: solid 1px $color;
-                        border-bottom: solid 1px $color;
-                        background-color: transparent;
-                        padding-left: 10px;
-                        @include whiteR();
-                        font-size: 25px;
-                        
-                        &::placeholder{
-                            font-size: 25px;
-                            @include whiteR();
-                            font-weight: 900;
-                            opacity: 1;
-                        }
-
-                        &[type="submit"]{
-                            @include redButton();
-                            border: solid 1px $color;
-                            font-size: 25px;
-                            width: 120px;
-                            height:50px;
-                            margin: 0 auto;
-                        }
-                    }
-                    textarea{
-                        width:80%;
-                        height:250px;
-                        border: none;
-                        border-left: solid 1px $color;
-                        border-bottom: solid 1px $color;
-                        background-color: transparent;
-                        resize: none;
-                        padding-left: 10px;
-                        @include whiteR();
-                        font-size: 25px;
-
-                        &::placeholder{
-                            font-size: 25px;
-                            @include whiteR();
-                            font-weight: 900;
-                            opacity: 1;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-/* Footer */
-footer{
-    overflow: hidden;
-    width: 100%;
-    background: $background;
-
-    /* Information légales */
-    #legal{
-        width:90%;
-        min-height:125px;
-        margin:10px auto;
-        display: grid;
-        gap:20px;
-        grid-template-columns: repeat(4,2fr);
-
-        @media all and (max-width:1200px){
-            width:70%;
-            grid-template-columns: 1fr 1fr;
-        }
-        @media all and (max-width:572px){
-            width:50%;
-            grid-template-columns: 1fr;
-        }
-
-        .legalF{
-            display: flex;
-            flex-direction: column;
-
-            h3{
-                color: $color;
-                font-family: $font2;
-                font-size: 40px;
-            }
-
-            h4,p,a{
-                @include whiteR();
-                margin: 10px 0;
-            }
-            h4{
-                font-size: 20px;
-            }
-            p{
-                font-size: 16px;
-            }
-            a{
-                text-decoration: none;
-                font-size: 16px;
-
-                &:hover{
-                    text-decoration: underline;
-                }
-            }
-        }
-    }
-    /* ligne */
-    hr{
-        width:100%;
-        color: $color;
-    }
-    /* Copyright */
-    #copyright{
-        width: 90%;
-        min-height:68px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        @media all and (max-width:1200px){
-            width:70%;
-        }
-        @media all and (max-width:572px){
-            width:50%;
-            flex-direction: column;
-        }
-
-        .socialsM{
-            display: flex;
-            a{
-                display: block;
-                width: fit-content;
-                margin:20px 20px 20px 0;
-                svg{
-                    font-size: 3em;
-                    fill:$color;
-                }
-            }
-        }
-
-        .copyright{
-            p{
-                font-size: 16px;
-                @include whiteR();
-                margin-bottom: 20px;
-            }
-        }
-    }
-}
-
-/* Info.html */
-
-#infos01{
-    background: $background;
-    display: flex;
-    
-    @media all and (max-width:1200px){
-        flex-direction: column;
-    }
-
-    /* Info 01 Côté Gauche */
-    #IG01{
-        min-height: 100vh;
-        width:50%;
-    
         .wrapper{
-            height:100%;
-            width: 80%;
+            width:90%;
             margin: 0 auto;
-            overflow: hidden;
-            @include centreWrapper();
-        
-            h2{
-                @include whiteR();
-                font-size: 40px;
-                margin-bottom: 25px;
-                margin-top:110px;
-                @media all and (max-width:1200px){
-                    margin-top:20px;
-                }
-            }
-            p{
-                font-size: 18px;
-                line-height: 35px;
-                @include whiteR();
-                margin-bottom: 30px;
-
-                strong{
-                    font-weight: 900;
-                }
-            }
-            div{
-                display: flex;
-                height:10vh;
-                justify-content: center;
-                align-items: center;
-                svg{
-                    font-size: 1.5em;
-                    fill: $color;
-                }
-            }
-        }
-        @media all and (max-width:1200px){
-            width: 100%;
-            order: 1;
-        }
-    }
-    /* Info01 Côté Droit*/
-    #ID01{
-        height:100vh;
-        width:50%;
-        background-image: url(../photos/fond/concert-gc9947de5f_1280.jpg),url(../photos/fond/fondrouge.png);
-        @include backgroundimg();
-
-        @media all and (max-width:1200px){
-            order: 0;
-            width: 100%;
-            height:50vh;
-        }
-    }
-}
-/* info 02 */
-#infos02{
-    background: $background;
-    display: flex;
-    
-    @media all and (max-width:1200px){
-        flex-direction: column;
-    }
-
-    /*info02 Côté gauche */
-    #IG02{
-        width:50%;
-        min-height:100vh;
-        background-image: url(../photos/fond/audience-g0961e977a_1280.jpg),url(../photos/fond/fondbleu.png);
-        @include backgroundimg();
-
-        @media all and (max-width:1200px){
-            min-height:50vh;
-            width:100%;
-        }
-    }
-    /* info 02 Côté droit */
-    #ID02{
-        width:50%;
-        min-height:100vh;
-
-        @media all and (max-width:1200px){
-            width:100%;
-        }
-
-        .wrapper{
-            width:80%;
-            margin:0 auto;
-            overflow: hidden;
-            @include centreWrapper();
-
-            .up{
-                height:10vh;
-                margin-top:100px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                @media all and (max-width:1200px){
-                    margin-top:0;
-                }
-
-                svg{
-                    fill:$color;
-                    font-size: 1.5em;
-                }
-            }
-
-            p{
-                @include whiteR();
-                margin-bottom: 30px;
-                line-height: 35px;
-                font-size: 18px;
-
-                &:nth-child(6){
-                    margin-bottom: 0;
-                }
-
-                strong,b{
-                    font-weight:900;
-                }
-            }
-
-            .down{
-                height:10vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                svg{
-                    fill:$color;
-                    font-size: 1.5em;
-                }
-            }
-        }
-    }
-}
-/* info 03 */
-#infos03{
-    background: $background;
-    display: flex;
-
-    @media all and (max-width:1200px){
-        flex-direction: column;
-    }
-    /* info 03 Côté gauche */
-    #IG03{
-        width:50%;
-        min-height:100vh;
-
-        @media all and (max-width:1200px){
-            width: 100%;
-            order:1;
-        }
-
-        .wrapper{
-            width:80%;
-            margin:0 auto;
-            overflow: hidden;
-            @include centreWrapper();
-
-            .up{
-                height:10vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                svg{
-                    fill:$color;
-                    font-size: 1.5em;
-                }
-            }
-
-            p{
-                @include whiteR();
-                font-size:18px;
-                line-height: 35px;
-                margin-bottom: 30px;
-                strong,b{
-                    font-weight: 900;
-                }
-            }
-            div{
-                height: 10vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                a{
-                    @include redButton();
-                    @include whiteR();
-                    @include centre();
-                    font-size: 20px;
-                    width:120px;
-                    height:37px;
-                    margin: 0 10px;
-                
-                    &:nth-child(1){
-                        background-color: #181AD6;
-                    }
-
-                }
-            }
-        }
-    }
-    /* info 03 Côté droite */
-    #ID03{
-        width:50%;
-        height: 100vh;
-        background-image: url(../photos/fond/confetti-g0d6c6bd83_1280.jpg),url(../photos/fond/fondrouge.png);
-        @include backgroundimg();
-
-        @media all and (max-width:1200px){
-            order:0;
-            width:100%;
-            height:50vh;
-        }
-    }
-}
-/* Achat Tickets (ticket.html) */
-#tickets_achat{
-    background:$background;
-    overflow: hidden;
-    scroll-snap-align: none;
-
-    .wrapper{
-        width:90%;
-        margin:0 auto;
-        @include centreWrapper();
-
-        .titre{
-            margin-top: 125px;
-            display: flex;
-
-            h2{
-                @include whiteR();
-                font-size: 40px;
-                margin-right:40px;
-            }
-
-            a{
-                display: block;
-                width:140px;
-                height:44px;
-                background-color: #181AD6;
-                border: solid 1px $color;
-                text-decoration: none;
-                @include centre();
-                @include whiteR();
-
-                &:hover{
-                    text-decoration: underline;
-                }
-            }
-        }
-        .ticket{
             display: grid;
             grid-template-columns: repeat(4,1fr);
             gap:30px;
@@ -1137,245 +491,908 @@ footer{
                 grid-template-columns: 1fr;
             }
 
-            /* ticket Carte */
-            .cardT{
-                margin: 25px 0;
-                img{
-                    width:100%;
-                    height:322px;
-                    object-fit: cover;
-                    
+            .card{
+                /* Ticket Name */
+                .ticketN{
+                    margin-top: 30px;;
+                    height:305px;
+                    background-image: url(../photos/fond/ticket-g6e6bd675d_1280.jpg),url(../photos/fond/fondbleu.png);
+                    @include backgroundimg();
                     border-radius: 15px 15px 0 0;
                     border: solid 1px $color;
-                }
-
-                
-                /* ticket description */
-                .ticketC{
-                    width:100%;
-                    background-color: rgb(255, 255, 255,50%);
                     @include centre();
-                    @include whiteR();
                     flex-direction: column;
-                    border: solid 1px $color;
-                    
 
                     h4{
-                        font-size: 40px;
                         @include whiteR();
-
-                        &:first-child{
-                            margin-top: 20px;
-                        }
+                        font-size: 40px;
                     }
                     p{
-                        margin: 25px;
+                        margin-top: 50px;
+                        @include whiteR();
                         font-size: 30px;
                     }
-                    /* nombre de ticket */
-                    .count{
-                        display: flex;
-                        flex-wrap: nowrap;
-                        font-size: 40px;
-                        
-                        div{
-                            margin: 20px;
-                        }
-                        .minus,.plus{
-                            cursor: pointer;
-                        }
+                }
+                .cardred{
+                    background-image: url(../photos/fond/ticket-g6e6bd675d_1280.jpg),url(../photos/fond/fondrouge.png);
+                }
+
+                /*Ticket Description*/
+                .ticketD{
+                    p{
+                        width:90%;
+                        margin: 0 auto;
+                        margin-top: 20px;
+                        @include whiteR();
+                        font-size: 22px;
+                        line-height: 35px;
+                        text-align: center;
+                    }
+                    b{
+                        font-weight: 900;
                     }
                 }
             }
         }
-        #commande{
-            width:230px;
-            height:60px;
-            font-size: 30px;
-            margin: 20px auto;
+        a{
+            width:316px;
+                height:55px;
+            font-size: 22px;
+            margin: 25px auto;
             @include redButton();
         }
     }
-}
-/* Artistes */
-#juillet07,#juillet08,#juillet09{
-    background: $background;
-
-    .wrapper{
-        width:90%;
-        margin:0 auto;
-        @include centreWrapper();
-
-        h3{
-            margin: 110px auto 20px auto;
-            @include whiteR();
-            font-size: 40px;
-            text-decoration: underline;
-        }
-
-        .line_up{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            width:100%;
-            margin:0 auto;
-
-            @media all and (max-width:1600px){
-                width:70%
-            }
-            @media all and (max-width:1150px){
-                width: 100%;
-                justify-content: center;
-            }
-
-            /* Carte Complète */
-            .inner_card{
-                width:320px;
-                height:725px;
-                margin: 20px;
-                position: relative;
-                transform: perspective(600px);
-                transform-style: preserve-3d;
-                transition: all 0.5s;
-
-                &:hover{
-                    transform: perspective(600px) rotateY(180deg);
-                }
-                .front_card{
-                    img{
-                        border-radius: 15px 15px 0 0;
-                    }
-                }
-                .back_card{
-                    background-color: rgb(255, 255, 255,20%);
-                    transform: rotateY(180deg);
-                    border-radius: 15px 15px 0 0;
-                    display: flex;
-                    align-items: center;
-                    flex-direction: column;
-                    
-                    h4,a{
-                        margin-top:10px;
-                        @include whiteR();
-                    }
-                    h4{
-                        font-size: 30px;
-                    }
-                    a{
-                        text-decoration: none;
-                        font-size: 20px;
-                        &:hover{
-                            text-decoration: underline;
-                        }
-                    }
-                }
-                .front_card,.back_card{
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width:100%;
-                    height:100%;
-                    backface-visibility: hidden;
-                }
-            }  
-        }
-    }
-}
-/* Charlotte De Witte Description Artiste */
-#cdw{
-    background: $background;
-    overflow: hidden;
-    scroll-snap-align: none;
-
-    .wrapper{
-        width:90%;
-        margin:0 auto;
-
-        /* présentation */
-        .pres{
-            margin-top:125px;
-            display: flex;
-            flex-wrap: nowrap;
-
-            @media all and (max-width:1200px){
+    /* Contact */
+    #contact{
+        background:$background;
+        background-image: url(../photos/fond/concert-gcde17af1c_1280.jpg),url(../photos/fond/fond.png);
+        @include backgroundimg();
+        
+        .wrapper{
+            width:90%;
+            min-height: 100vh;
+            margin: 0 auto;
+            @include centre();
+            @media all and (max-width: 1200px){
                 flex-direction: column;
             }
-
-            .img{
-                width:500px;
-                height:80vh;
-                background-image: url(../photos/artistes/Charlotte-de-Witte_header-1-1400x840.webp),url(../photos/fond/fond.png);
-                @include backgroundimg();
-                border-radius: 15px 15px 0 0;
-
-                @media all and (max-width:1200px){
+            
+            /* Contact Gauche */
+            #contactG{
+                width:40%;
+                margin-top: 100px;
+                
+                @media all and (max-width: 1200px){
+                    margin-top: 20px;
                     width:100%;
+                    order: 1;
                 }
-            }
-            .texte{
-                width:100%;
-                margin-left: 25px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                h4{
-                    margin-top:20px;
-                    font-size:40px;
-                    @include whiteR();
-                }
-                p{
-                    @include whiteR();
-                    font-size: 20px;
-                    margin: 40px 0;
-                    line-height: 35px;
 
-                    strong{
-                        font-size: 22px;
-                    }
-                }
-                /* Liens Playlist */
-                .playlist{
+                /* Top : Info supplémentaire + Social Media */
+                #top{
                     display: flex;
-                    @include whiteR();
-                    h6{
-                        font-size:22px;
-                        font-weight: 900;
+                    width:100%;
+                    fill: $color;
+                    color: $color;
+                    @media all and (max-width: 1200px){
+                        flex-direction: column;
                     }
 
-                    div{
+                    /* Localisation + Calendar */
+                    #infoSupp{
                         display: flex;
                         flex-direction: column;
+                        width:50%;
+                        
+                        @media all and (max-width: 1200px){
+                            width:100%;
+                        }
+
+                        h6{
+                            font-size: 25px;
+                            @include whiteR();
+                            text-align: center;
+                            margin-top:30px;
+                            @media all and (max-width: 1200px){
+                                margin-left: 20px;
+                            }
+                        }
+                        svg{
+                            font-size: 3em;
+                            margin-top:30px;
+                        }
+                        /* Localisation */
+                        #loca{
+                            display: flex;
+                            flex-direction: column;
+                            
+                            div{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+
+                                @media all and (max-width: 1200px){
+                                    flex-direction: row;
+                                    width:100%;
+                                    margin: 0 auto;
+                                }
+                            }
+                            
+                        }
+                        /* calendrier */
+                        #calend{
+                            display: flex;
+                            flex-direction: column;
+                            
+                            div{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+
+                                @media all and (max-width: 1200px){
+                                    flex-direction: row;
+                                    width:100%;
+                                    margin: 0 auto;
+                                }
+                            }
+                        }
+                    }
+
+                    /* Socials Media */
+                    #socialsM{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        width:50%;
+                        @media all and (max-width: 1200px){
+                            justify-content: space-between;
+                            flex-direction: row;
+                            width:50%;
+                            margin: 20px auto;
+                        }
+                        @media all and (max-width:768px){
+                            width:100%;
+                        }
 
                         a{
-                            text-decoration: none;
-                            margin:10px 20px;
-                            font-size: 20px;
-                            @include whiteR();
-
-                            &:first-child{
-                                margin-top: 0;
+                            display: flex;
+                            justify-content: flex-end;
+                            width:fit-content;
+                            
+                            svg{
+                                font-size: 3em;
+                                margin-top: 30px;
                             }
                         }
                     }
                 }
-                .socials{
-                    width:60%;
-                    margin:20px auto;
-                    display: grid;
-                    grid-template-columns: repeat(4,1fr);
+                /* Sponsor */
+                #spons{
+                    width:100%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    margin-top:50px;
 
                     @media all and (max-width:768px){
-                        grid-template-columns: 1fr 1fr;
+                        flex-direction: column;
                     }
-                    
-                    a{
-                        margin:10px 0;
+
+                    img{
+                        width:150px;
+                        height:85px;
+                        margin: 20px auto;
+                        object-fit: none;
+                    }
+                }
+            }
+            /* Formulaire */
+            #formulaire{
+                width:60%;
+                margin-top: 100px;
+                border-radius: 15px;
+                background-color: rgb(255, 255, 255,50%);
+                @media all and (max-width: 1200px){
+                    width:100%;
+                    order: 0;
+                }
+
+                h2{
+                    @include whiteR();
+                    font-size: 40px;
+                    margin:15px;
+                }
+
+                form{
+                    width:100%;
+                    margin: 20px 0;
+                    .form-group{
+                        margin: 30px 0;
                         text-align: center;
-                        width:fit-content;
-                        svg{
-                            font-size: 4em;
-                            fill:$color;
+
+                        input{
+                            width:80%;
+                            height:40px;
+                            border: none;
+                            border-left: solid 1px $color;
+                            border-bottom: solid 1px $color;
+                            background-color: transparent;
+                            padding-left: 10px;
+                            @include whiteR();
+                            font-size: 25px;
+                            
+                            &::placeholder{
+                                font-size: 25px;
+                                @include whiteR();
+                                font-weight: 900;
+                                opacity: 1;
+                            }
+
+                            &[type="submit"]{
+                                @include redButton();
+                                border: solid 1px $color;
+                                font-size: 25px;
+                                width: 120px;
+                                height:50px;
+                                margin: 0 auto;
+                            }
+                        }
+                        textarea{
+                            width:80%;
+                            height:250px;
+                            border: none;
+                            border-left: solid 1px $color;
+                            border-bottom: solid 1px $color;
+                            background-color: transparent;
+                            resize: none;
+                            padding-left: 10px;
+                            @include whiteR();
+                            font-size: 25px;
+
+                            &::placeholder{
+                                font-size: 25px;
+                                @include whiteR();
+                                font-weight: 900;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* Footer */
+    footer{
+        overflow: hidden;
+        width: 100%;
+        background: $background;
+        scroll-snap-align: start;
+
+        /* Information légales */
+        #legal{
+            width:90%;
+            min-height:125px;
+            margin:10px auto;
+            display: grid;
+            gap:20px;
+            grid-template-columns: repeat(4,2fr);
+
+            @media all and (max-width:1200px){
+                width:70%;
+                grid-template-columns: 1fr 1fr;
+            }
+            @media all and (max-width:572px){
+                width:50%;
+                grid-template-columns: 1fr;
+            }
+
+            .legalF{
+                display: flex;
+                flex-direction: column;
+
+                h3{
+                    color: $color;
+                    font-family: $font2;
+                    font-size: 40px;
+                }
+
+                h4,p,a{
+                    @include whiteR();
+                    margin: 10px 0;
+                }
+                h4{
+                    font-size: 20px;
+                }
+                p{
+                    font-size: 16px;
+                }
+                a{
+                    text-decoration: none;
+                    font-size: 16px;
+
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        /* ligne */
+        hr{
+            width:100%;
+            color: $color;
+        }
+        /* Copyright */
+        #copyright{
+            width: 90%;
+            min-height:68px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @media all and (max-width:1200px){
+                width:70%;
+            }
+            @media all and (max-width:572px){
+                width:50%;
+                flex-direction: column;
+            }
+
+            .socialsM{
+                display: flex;
+                a{
+                    display: block;
+                    width: fit-content;
+                    margin:20px 20px 20px 0;
+                    svg{
+                        font-size: 3em;
+                        fill:$color;
+                    }
+                }
+            }
+
+            .copyright{
+                p{
+                    font-size: 16px;
+                    @include whiteR();
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    /* Info.html */
+
+    #infos01{
+        background: $background;
+        display: flex;
+        
+        @media all and (max-width:1200px){
+            flex-direction: column;
+        }
+
+        /* Info 01 Côté Gauche */
+        #IG01{
+            min-height: 100vh;
+            width:50%;
+        
+            .wrapper{
+                height:100%;
+                width: 80%;
+                margin: 0 auto;
+                overflow: hidden;
+                @include centreWrapper();
+            
+                h2{
+                    @include whiteR();
+                    font-size: 40px;
+                    margin-bottom: 25px;
+                    margin-top:110px;
+                    @media all and (max-width:1200px){
+                        margin-top:20px;
+                    }
+                }
+                p{
+                    font-size: 18px;
+                    line-height: 35px;
+                    @include whiteR();
+                    margin-bottom: 30px;
+
+                    strong{
+                        font-weight: 900;
+                    }
+                }
+                div{
+                    display: flex;
+                    height:10vh;
+                    justify-content: center;
+                    align-items: center;
+                    svg{
+                        font-size: 1.5em;
+                        fill: $color;
+                    }
+                }
+            }
+            @media all and (max-width:1200px){
+                width: 100%;
+                order: 1;
+            }
+        }
+        /* Info01 Côté Droit*/
+        #ID01{
+            height:100vh;
+            width:50%;
+            background-image: url(../photos/fond/concert-gc9947de5f_1280.jpg),url(../photos/fond/fondrouge.png);
+            @include backgroundimg();
+
+            @media all and (max-width:1200px){
+                order: 0;
+                width: 100%;
+                height:50vh;
+            }
+        }
+    }
+    /* info 02 */
+    #infos02{
+        background: $background;
+        display: flex;
+        
+        @media all and (max-width:1200px){
+            flex-direction: column;
+        }
+
+        /*info02 Côté gauche */
+        #IG02{
+            width:50%;
+            min-height:100vh;
+            background-image: url(../photos/fond/audience-g0961e977a_1280.jpg),url(../photos/fond/fondbleu.png);
+            @include backgroundimg();
+
+            @media all and (max-width:1200px){
+                min-height:50vh;
+                width:100%;
+            }
+        }
+        /* info 02 Côté droit */
+        #ID02{
+            width:50%;
+            min-height:100vh;
+
+            @media all and (max-width:1200px){
+                width:100%;
+            }
+
+            .wrapper{
+                width:80%;
+                margin:0 auto;
+                overflow: hidden;
+                @include centreWrapper();
+
+                .up{
+                    height:10vh;
+                    margin-top:100px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    @media all and (max-width:1200px){
+                        margin-top:0;
+                    }
+
+                    svg{
+                        fill:$color;
+                        font-size: 1.5em;
+                    }
+                }
+
+                p{
+                    @include whiteR();
+                    margin-bottom: 30px;
+                    line-height: 35px;
+                    font-size: 18px;
+
+                    &:nth-child(6){
+                        margin-bottom: 0;
+                    }
+
+                    strong,b{
+                        font-weight:900;
+                    }
+                }
+
+                .down{
+                    height:10vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    svg{
+                        fill:$color;
+                        font-size: 1.5em;
+                    }
+                }
+            }
+        }
+    }
+    /* info 03 */
+    #infos03{
+        background: $background;
+        display: flex;
+
+        @media all and (max-width:1200px){
+            flex-direction: column;
+        }
+        /* info 03 Côté gauche */
+        #IG03{
+            width:50%;
+            min-height:100vh;
+
+            @media all and (max-width:1200px){
+                width: 100%;
+                order:1;
+            }
+
+            .wrapper{
+                width:80%;
+                margin:0 auto;
+                overflow: hidden;
+                @include centreWrapper();
+
+                .up{
+                    height:10vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    svg{
+                        fill:$color;
+                        font-size: 1.5em;
+                    }
+                }
+
+                p{
+                    @include whiteR();
+                    font-size:18px;
+                    line-height: 35px;
+                    margin-bottom: 30px;
+                    strong,b{
+                        font-weight: 900;
+                    }
+                }
+                div{
+                    height: 10vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    a{
+                        @include redButton();
+                        @include whiteR();
+                        @include centre();
+                        font-size: 20px;
+                        width:120px;
+                        height:37px;
+                        margin: 0 10px;
+                    
+                        &:nth-child(1){
+                            background-color: #181AD6;
+                        }
+
+                    }
+                }
+            }
+        }
+        /* info 03 Côté droite */
+        #ID03{
+            width:50%;
+            height: 100vh;
+            background-image: url(../photos/fond/confetti-g0d6c6bd83_1280.jpg),url(../photos/fond/fondrouge.png);
+            @include backgroundimg();
+
+            @media all and (max-width:1200px){
+                order:0;
+                width:100%;
+                height:50vh;
+            }
+        }
+    }
+    /* Achat Tickets (ticket.html) */
+    #tickets_achat{
+        background:$background;
+        overflow: hidden;
+
+        .wrapper{
+            width:90%;
+            margin:0 auto;
+            @include centreWrapper();
+
+            .titre{
+                margin-top: 125px;
+                display: flex;
+
+                h2{
+                    @include whiteR();
+                    font-size: 40px;
+                    margin-right:40px;
+                }
+
+                a{
+                    display: block;
+                    width:140px;
+                    height:44px;
+                    background-color: #181AD6;
+                    border: solid 1px $color;
+                    text-decoration: none;
+                    @include centre();
+                    @include whiteR();
+
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .ticket{
+                display: grid;
+                grid-template-columns: repeat(4,1fr);
+                gap:30px;
+
+                @media all and (max-width:1200px)
+                {
+                    grid-template-columns: 1fr 1fr;
+                }
+                @media all and (max-width:768px)
+                {
+                    grid-template-columns: 1fr;
+                }
+
+                /* ticket Carte */
+                .cardT{
+                    margin: 25px 0;
+                    img{
+                        width:100%;
+                        height:322px;
+                        object-fit: cover;
+                        
+                        border-radius: 15px 15px 0 0;
+                        border: solid 1px $color;
+                    }
+
+                    
+                    /* ticket description */
+                    .ticketC{
+                        width:100%;
+                        background-color: rgb(255, 255, 255,50%);
+                        @include centre();
+                        @include whiteR();
+                        flex-direction: column;
+                        border: solid 1px $color;
+                        
+
+                        h4{
+                            font-size: 40px;
+                            @include whiteR();
+
+                            &:first-child{
+                                margin-top: 20px;
+                            }
+                        }
+                        p{
+                            margin: 25px;
+                            font-size: 30px;
+                        }
+                        /* nombre de ticket */
+                        .count{
+                            display: flex;
+                            flex-wrap: nowrap;
+                            font-size: 40px;
+                            
+                            div{
+                                margin: 20px;
+                            }
+                            .minus,.plus{
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+            #commande{
+                width:230px;
+                height:60px;
+                font-size: 30px;
+                margin: 20px auto;
+                @include redButton();
+            }
+        }
+    }
+    /* Artistes */
+    #juillet07,#juillet08,#juillet09{
+        background: $background;
+
+        .wrapper{
+            width:90%;
+            margin:0 auto;
+            @include centreWrapper();
+
+            h3{
+                margin: 110px auto 20px auto;
+                @include whiteR();
+                font-size: 40px;
+                text-decoration: underline;
+            }
+
+            .line_up{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                width:100%;
+                margin:0 auto;
+
+                @media all and (max-width:1600px){
+                    width:70%
+                }
+                @media all and (max-width:1150px){
+                    width: 100%;
+                    justify-content: center;
+                }
+
+                /* Carte Complète */
+                .inner_card{
+                    width:320px;
+                    height:725px;
+                    margin: 20px;
+                    position: relative;
+                    transform: perspective(600px);
+                    transform-style: preserve-3d;
+                    transition: all 0.5s;
+
+                    &:hover{
+                        transform: perspective(600px) rotateY(180deg);
+                    }
+                    .front_card{
+                        cursor:pointer;
+                        img{
+                            border-radius: 15px 15px 0 0;
+                        }
+                    }
+                    .back_card{
+                        background-color: rgb(255, 255, 255,30%);
+                        transform: rotateY(180deg);
+                        border-radius: 15px 15px 0 0;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        
+                        h4,a{
+                            margin-top:10px;
+                            @include whiteR();
+                        }
+                        h4{
+                            font-size: 30px;
+                        }
+                        a{
+                            text-decoration: none;
+                            font-size: 20px;
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                    .back_card{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width:100%;
+                        height:100%;
+                        backface-visibility: hidden;
+                    }
+                }  
+            }
+        }
+    }
+    /* Charlotte De Witte Description Artiste */
+    #cdw{
+        background: $background;
+        overflow: hidden;
+
+        .wrapper{
+            width:90%;
+            margin:0 auto;
+
+            /* présentation */
+            .pres{
+                margin-top:125px;
+                display: flex;
+                flex-wrap: nowrap;
+
+                @media all and (max-width:1200px){
+                    flex-direction: column;
+                }
+
+                .img{
+                    width:500px;
+                    height:80vh;
+                    background-image: url(../photos/artistes/Charlotte-de-Witte_header-1-1400x840.webp),url(../photos/fond/fond.png);
+                    @include backgroundimg();
+                    border-radius: 15px 15px 0 0;
+
+                    @media all and (max-width:1200px){
+                        width:100%;
+                    }
+                }
+                .texte{
+                    width:90%;
+                    margin-left: 25px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    h4{
+                        margin-top:20px;
+                        font-size:40px;
+                        @include whiteR();
+                    }
+                    p{
+                        @include whiteR();
+                        font-size: 20px;
+                        margin: 40px 0;
+                        line-height: 35px;
+
+                        strong{
+                            font-size: 22px;
+                        }
+                    }
+                    /* Liens Playlist */
+                    .playlist{
+                        display: flex;
+                        @include whiteR();
+                        word-wrap: break-word;
+
+                        @media all and (max-width:444px){
+                            flex-direction: column;
+                        }
+                        h6{
+                            font-size:22px;
+                            font-weight: 900;
+                            margin-bottom: 20px;
+                        }
+
+                        div{
+                            display: flex;
+                            flex-direction: column;
+
+                            a{
+                                text-decoration: none;
+                                margin:10px 20px;
+                                font-size: 20px;
+                                @include whiteR();
+
+                                &:first-child{
+                                    margin-top: 0;
+                                }
+
+                                &:hover{
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+                    .socials{
+                        width:60%;
+                        margin:20px auto;
+                        display: grid;
+                        grid-template-columns: repeat(4,1fr);
+
+                        @media all and (max-width:768px){
+                            grid-template-columns: 1fr 1fr;
+                        }
+                        
+                        a{
+                            margin:10px 0;
+                            text-align: center;
+                            width:fit-content;
+                            svg{
+                                font-size: 4em;
+                                fill:$color;
+                            }
                         }
                     }
                 }
