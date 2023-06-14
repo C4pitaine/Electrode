@@ -53,7 +53,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
     /* nav */
     header{
         display: flex;
-        
         height: 100px;
         width: 100%;
         background: $background;
@@ -71,11 +70,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
 
             @media all and (max-width:572px)
             {
-                font-size: 50px;
-            }
-            /* Media queries max-height nécessaire sinon le h2 passe au dessus des <a> quand le menu burger est ouvert */
-            @media all and (max-height: 655px){
-                font-size:25px;
+                font-size: 40px;
             }
         }
 
@@ -172,6 +167,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
     /* header quand menu burger ouvert */
     header.menuOpened{
         background: none;
+        position: absolute;
 
         .bar{
             
@@ -196,7 +192,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
         
         /* Menu burger ouvert */
         #menu{
-            position: fixed;
+            position: absolute;
             top:0;
             left:0;
             z-index:100;
@@ -214,6 +210,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 text-decoration: none;
                 margin: 20px;
                 position: relative;
+                
 
                 &::before{
                     content:"";
@@ -225,6 +222,9 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     z-index: 1;
                     background-color: $color;
                     transform: translateX(-50%);
+                }
+                &:first-child{
+                    margin-top: 110px;
                 }
                 &:last-child{
                     width:125px;
@@ -779,7 +779,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
         overflow: hidden;
         width: 100%;
         background: $background;
-        scroll-snap-align: end;
+        scroll-snap-align: start;
 
         /* Information légales */
         #legal{
@@ -948,15 +948,15 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
         }
         /* Info01 Côté Droit*/
         #ID01{
-            height:100vh;
+            min-height:100vh;
             width:50%;
             background-image: url(../photos/fond/concert-gc9947de5f_1280.jpg),url(../photos/fond/fondrouge.png);
             @include backgroundimg();
 
             @media all and (max-width:1200px){
                 order: 0;
-                width: 100%;
-                height:50vh;
+                width:100%;
+                min-height:50vh;
             }
         }
     }
@@ -1114,14 +1114,14 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
         /* info 03 Côté droite */
         #ID03{
             width:50%;
-            height: 100vh;
+            min-height: 100vh;
             background-image: url(../photos/fond/confetti.jpg),url(../photos/fond/fondrouge.png);
             @include backgroundimg();
 
             @media all and (max-width:1200px){
                 order:0;
+                min-height:50vh;
                 width:100%;
-                height:50vh;
             }
         }
     }
