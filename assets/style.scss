@@ -188,7 +188,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
         width:100%;
         min-height:100vh;
         position: relative; 
-        scroll-snap-align: start; 
+        scroll-snap-align: none; 
         }
         
         /* Menu burger ouvert */
@@ -805,7 +805,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
         overflow: hidden;
         width: 100%;
         background: $background;
-        scroll-snap-align: start;
+        scroll-snap-align: none;
 
         /* Information légales */
         #legal{
@@ -1305,8 +1305,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
 
                     &:hover{
                         transform: perspective(600px) rotateY(180deg);
-
-                       
                     }
 
                     @media all and (max-width:1024px){
@@ -1314,10 +1312,16 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                             transform: perspective(600px);
                         }
                     }
+
+                    
                 
                     .front_card{
-                        
+                        height:100%;
+                        width: 100%;
                         img{
+                            height:100%;
+                            width: 100%;
+                            object-fit:cover;
                             border-radius: 15px 15px 0 0;
                         }
                     }
