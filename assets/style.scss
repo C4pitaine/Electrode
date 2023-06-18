@@ -65,6 +65,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             margin-left:30px;
             font-family: $font2;
             font-size: 60px;
+            font-weight: 400;
             color: $color;
             line-height: 100px;
             user-select: none;
@@ -268,7 +269,8 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 font-family: $font2;
                 color:  $color;
                 font-size: 70px;
-                margin-bottom: 20px;
+                margin-bottom: 25px;
+                font-weight: 400;
                 @media all and (max-width:572px)
                 {
                     font-size: 65px;
@@ -280,7 +282,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             }
             h3{
                 @include whiteR();
-                margin-bottom: 20px;
+                margin-bottom: 25px;
                 font-weight: 400;
                 font-size: 45px;
                 @media all and (max-width:572px)
@@ -1178,7 +1180,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     display: block;
                     width:140px;
                     height:44px;
-                    background-color: #181AD6;
+                    background-color: #FC143A;
                     border: solid 1px $color;
                     text-decoration: none;
                     @include centre();
@@ -1259,6 +1261,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 font-size: 30px;
                 margin: 20px auto;
                 @include redButton();
+                background-color: #181AD6;
             }
         }
     }
@@ -1298,7 +1301,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 /* Carte Complète */
                 .inner_card{
                     width:320px;
-                    height:725px;
+                    height:70vh;
                     margin: 20px;
                     position: relative;
                     transform: perspective(600px);
