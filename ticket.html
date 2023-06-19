@@ -78,7 +78,7 @@
                             <p>40€</p>
                             <div class="count">
                                 <div class="minus">-</div>
-                                <div>0</div>
+                                <div class="nombre">0</div>
                                 <div class="plus">+</div>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                             <p>75€</p>
                             <div class="count">
                                 <div class="minus">-</div>
-                                <div>0</div>
+                                <div class="nombre">0</div>
                                 <div class="plus">+</div>
                             </div>
                         </div>
@@ -104,7 +104,7 @@
                             <p>100€</p>
                             <div class="count">
                                 <div class="minus">-</div>
-                                <div>0</div>
+                                <div class="nombre">0</div>
                                 <div class="plus">+</div>
                             </div>
                         </div>
@@ -117,7 +117,7 @@
                             <p>175€</p>
                             <div class="count">
                                 <div class="minus">-</div>
-                                <div>0</div>
+                                <div class="nombre">0</div>
                                 <div class="plus">+</div>
                             </div>
                         </div>
@@ -170,6 +170,9 @@
         const menu = document.querySelector('#menu')
         const header = document.querySelector('header')
         const menuAll = document.querySelectorAll('#menu a')
+        const nombre = document.querySelectorAll('.nombre')
+        const minus = document.querySelectorAll('.minus')
+        const plus = document.querySelectorAll('.plus')
 
         document.querySelector('header nav #burger').addEventListener('click',()=>{
             menu.classList.toggle("menuOpened")
@@ -180,6 +183,23 @@
             elem.addEventListener('click',()=>{
                 menu.classList.toggle("menuOpened")
                 header.classList.toggle("menuOpened")
+            })
+        })
+        
+        nombre.forEach((number,key)=>{
+            var index = 0
+            const nummer = key
+            plus[nummer].addEventListener('click',()=>{
+                if(index<9){
+                    index++
+                    nombre[nummer].innerHTML = index
+                }
+            })
+            minus[nummer].addEventListener('click',()=>{
+                if(index>0){
+                    index--
+                    nombre[nummer].innerHTML = index
+                }
             })
         })
 
