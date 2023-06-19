@@ -4,28 +4,32 @@ $font1: 'Roboto', sans-serif;
 $font2: 'Nova Cut', cursive;
 $color: white;
 $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
-
+/* Mixin Arrière plan image */
 @mixin backgroundimg{
     background-position: center center;
     background-size: cover;
     background-blend-mode: overlay;
 }
+/* Mixin pour centrer un élement */
 @mixin centre{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+/* Mixin pour centrer un élement dans le wrapper */
 @mixin centreWrapper{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+/* Mixin Roboto blanc */
 @mixin whiteR{
     color: $color;
     font-family: $font1;
     font-weight: 400;
 }
+/* Mixin Bouton Rouge */
 @mixin redButton{
     background-color: #FC143A;
     border: solid 1px white;
@@ -133,7 +137,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 {
                     display: block;
                 }
-
+                /* Barre du menu burger */
                 .bar{
                     transition: all 0.5s;
                     width: 100%;
@@ -213,7 +217,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 margin: 20px;
                 position: relative;
                 
-
+                /* Barre blanche sous les a */
                 &::before{
                     content:"";
                     position: absolute;
@@ -338,19 +342,22 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         }
                     }
                 }
+                /* Charlotte De Witte */
                 #CDW{
                     background-image: url(../photos/artistes/43288664685_75ff191678_b.jpg),url(../photos/fond/fond.png);
                 }
+                /* Martin Garrix */
                 #MG{
                     background-image: url(../photos/artistes/28481723580_264d106b2a_b.jpg),url(../photos/fond/fond.png);
                 }
+                /* David Guetta */
                 #DG{
                     background-image: url(../photos/artistes/David_Guetta_.jpg),url(../photos/fond/fond.png);
                 }
             }
         }
     }
-    /* Infos */
+    /* Index.html Infos */
     #infos{
         background: $background;
         display: flex;
@@ -437,7 +444,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             }
         }
     }
-    /* Tickets */
+    /* Index.html Tickets */
     #tickets{
         background: $background;
         overflow: hidden;
@@ -460,7 +467,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     transform: translateX(0%);
                 }
             }
-
+            /* Texte dans la bannière */
             .text{
                 transform: translateX(-100%);
                 white-space: nowrap;
@@ -489,6 +496,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         transform: translateX(-100%);
                     }
                 }
+                /* Bannière du bas ( texte en sens inverse ) */
                 .text{
                     animation-name: Scrollinverse;
                     animation-iteration-count: infinite;
@@ -565,7 +573,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             @include redButton();
         }
     }
-    /* Contact */
+    /* Index.html Contact */
     #contact{
         background:$background;
         background-image: url(../photos/fond/concert-gcde17af1c_1280.jpg),url(../photos/fond/fond.png);
@@ -864,7 +872,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             width:100%;
             color: $color;
         }
-        /* Copyright */
+        /* Partie Copyright */
         #copyright{
             width: 90%;
             min-height:68px;
@@ -907,7 +915,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             }
 
             .copyright{
-                
                 p{
                     font-size: 16px;
                     @include whiteR();
@@ -917,8 +924,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
         }
     }
 
-    /* Info.html */
-
+    /* Info.html info01*/
     #infos01{
         background: $background;
         display: flex;
@@ -960,6 +966,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         font-weight: 900;
                     }
                 }
+                /* flèche vers le bas */
                 .down{
                     display: flex;
                     height:10vh;
@@ -990,7 +997,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             }
         }
     }
-    /* info 02 */
+    /* Info.html info02 */
     #infos02{
         background: $background;
         display: flex;
@@ -1026,6 +1033,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 overflow: hidden;
                 @include centreWrapper();
 
+                /*flèche vers le haut*/
                 .up{
                     height:10vh;
                     margin-top:100px;
@@ -1058,7 +1066,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         font-weight:900;
                     }
                 }
-
+                /* Flèche vers le bas */
                 .down{
                     height:10vh;
                     display: flex;
@@ -1073,7 +1081,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             }
         }
     }
-    /* info 03 */
+    /* Info.html info03 */
     #infos03{
         background: $background;
         display: flex;
@@ -1097,6 +1105,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 overflow: hidden;
                 @include centreWrapper();
 
+                /* flèche vers le haut */
                 .up{
                     height:10vh;
                     display: flex;
@@ -1265,7 +1274,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             }
         }
     }
-    /* Artistes */
+    /* artistes.html Artistes */
     #juillet07,#juillet08,#juillet09{
         background: $background;
 
