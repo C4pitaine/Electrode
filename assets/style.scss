@@ -41,18 +41,15 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
         text-decoration: underline;
     }
 }
-
 *{
     margin:0;
     padding:0;
 }
-
 .container{
     width:100%;
     height:100vh;
     overflow: auto;
     scroll-snap-type: y proximity;
-    
     /* Index.html */
     /* nav */
     header{
@@ -64,7 +61,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
         top:0;
         left: 0;
         z-index: 101;
-
         h2{
             margin-left:30px;
             font-family: $font2;
@@ -79,21 +75,17 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 font-size: 40px;
             }
         }
-
         nav{
             width:80%;
             height:100%;
             display: flex;
             justify-content: flex-end;
-            
-
             @media all and (max-width:1200px)
                 {
                     display: flex;
                     justify-content: flex-end;
                     align-items: center;
                 }
-
             ul{
                 list-style: none;
                 display: flex;
@@ -102,13 +94,11 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 {
                     display: none;
                 }
-
                 div{
                     color: $color;
                     font-size: 30px;
                     line-height: 100px;
                 }
-                
                 li{
                     flex:1;
                     text-align: center;
@@ -131,8 +121,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 margin-right: 15px;
                 cursor: pointer;
                 display: none;
-                
-
                 @media all and (max-width:1200px)
                 {
                     display: block;
@@ -160,11 +148,9 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             margin: auto 25px;
             @include whiteR();
             @include centre();
-
             &:hover{
                 text-decoration: underline;
             }
-
             @media all and (max-width:1200px){
                 display: none;
             }
@@ -174,9 +160,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
     header.menuOpened{
         background: none;
         position: absolute;
-
         .bar{
-            
             &:first-child{
                 transform: rotate(45deg) translate(5px,5px);
             }
@@ -188,14 +172,12 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             }
         }
     }
-
     .slide{
         width:100%;
         min-height:100vh;
         position: relative; 
         scroll-snap-align: none; 
         }
-        
         /* Menu burger ouvert */
         #menu{
             position: absolute;
@@ -207,7 +189,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             justify-content: center;
             align-items: center;
             background: $background;
-
             a{
                 display: flex;
                 height:75px;
@@ -216,7 +197,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 text-decoration: none;
                 margin: 20px;
                 position: relative;
-                
                 /* Barre blanche sous les a */
                 &::before{
                     content:"";
@@ -244,7 +224,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         width:0;
                     }
                 }
-
                 &:hover{
                     text-decoration: underline;
                 }
@@ -253,13 +232,10 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
         .menuOpened#menu{
             display: flex;
         }
-
     /* Home */
     #home{
         background: $background;
-
         /* Présentation Home */
-
         #homepres{
             width:100%;
             min-height:65vh;
@@ -268,7 +244,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             flex-direction: column;
             @include centre();
             user-select: none;
-
             h2{
                 font-family: $font2;
                 color:  $color;
@@ -303,7 +278,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 }
             }
         }
-
         /* Home Artiste */
         #homeartiste{
             display: grid;
@@ -314,7 +288,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             {
                 grid-template-columns: 1fr;
             }
-
             a{
                 text-decoration: none;
                 #CDW,#MG,#DG{
@@ -334,7 +307,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         @include whiteR();
                         font-size: 20px;
                     }
-
                     &:hover{
                         border: solid 1px white;
                         p{
@@ -366,7 +338,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             {
                 flex-direction: column;
             }
-
         /* Coté gauche */
         .gauche{
             width:50%;
@@ -384,7 +355,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         margin-top: 10px;
                     }
                 }
-
                 p{
                     @include whiteR();
                     font-size: 18px;
@@ -402,7 +372,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     margin: 25px 0 0 40px;
                     display: flex;
                     flex-direction: column;
-
                     p{
                         @include whiteR();
                         font-size: 18px;
@@ -423,7 +392,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     @include redButton();
                 }
             }
-
             @media all and (max-width:1200px)
             {
                 width:100%;
@@ -458,7 +426,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             display: flex;
             align-items: center;
             user-select: none;
-
             @keyframes Scroll{
                 0%{
                     transform: translateX(-100%);
@@ -483,11 +450,8 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     font-weight: 900;
                 }
             }
-            
             &:last-child{
                 margin: 50px 0 0 0;
-                
-
                 @keyframes Scrollinverse{
                     0%{
                         transform: translateX(0%);
@@ -547,7 +511,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 .cardred{
                     background-image: url(../photos/fond/ticket-g6e6bd675d_1280.jpg),url(../photos/fond/fondrouge.png);
                 }
-
                 /*Ticket Description*/
                 .ticketD{
                     p{
@@ -578,7 +541,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
         background:$background;
         background-image: url(../photos/fond/concert-gcde17af1c_1280.jpg),url(../photos/fond/fond.png);
         @include backgroundimg();
-        
         .wrapper{
             width:90%;
             min-height: 100vh;
@@ -587,18 +549,15 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             @media all and (max-width: 1200px){
                 flex-direction: column;
             }
-            
             /* Contact Gauche */
             #contactG{
                 width:40%;
                 margin-top: 100px;
-                
                 @media all and (max-width: 1200px){
                     margin-top: 20px;
                     width:100%;
                     order: 1;
                 }
-
                 /* Top : Info supplémentaire + Social Media */
                 #top{
                     display: flex;
@@ -608,7 +567,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     @media all and (max-width: 1200px){
                         flex-direction: column;
                     }
-
                     /* Localisation + Calendar */
                     #infoSupp{
                         display: flex;
@@ -618,7 +576,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         @media all and (max-width: 1200px){
                             width:100%;
                         }
-
                         h6{
                             font-size: 25px;
                             @include whiteR();
@@ -639,7 +596,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         #loca{
                             display: flex;
                             flex-direction: column;
-                            
                             div{
                                 display: flex;
                                 flex-direction: column;
@@ -657,13 +613,10 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         #calend{
                             display: flex;
                             flex-direction: column;
-                            
                             div{
                                 display: flex;
                                 flex-direction: column;
                                 justify-content: center;
-
-                                
                                 @media all and (max-width: 1200px){
                                     flex-direction: row;
                                     width:100%;
@@ -672,7 +625,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                             }
                         }
                     }
-
                     /* Socials Media */
                     #socialsM{
                         display: flex;
@@ -688,7 +640,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         @media all and (max-width:768px){
                             width:100%;
                         }
-
                         a{
                             display: flex;
                             justify-content: flex-end;
@@ -736,7 +687,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     width:100%;
                     order: 0;
                 }
-
                 h2{
                     @include whiteR();
                     font-size: 40px;
@@ -749,7 +699,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     .form-group{
                         margin: 30px 0;
                         text-align: center;
-
                         input{
                             width:80%;
                             height:40px;
@@ -760,18 +709,15 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                             padding-left: 10px;
                             @include whiteR();
                             font-size: 25px;
-                            
                             &::placeholder{
                                 font-size: 25px;
                                 @include whiteR();
                                 font-weight: 900;
                                 opacity: 1;
                             }
-
                             &:focus{
                                 background-color: rgb(0, 0, 0,20%);
                             }
-
                             &[type="submit"]{
                                 @include redButton();
                                 border: solid 1px $color;
@@ -794,14 +740,12 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                             padding-left: 10px;
                             @include whiteR();
                             font-size: 25px;
-
                             &::placeholder{
                                 font-size: 25px;
                                 @include whiteR();
                                 font-weight: 900;
                                 opacity: 1;
                             }
-
                             &:focus{
                                 background-color: rgb(0, 0, 0,20%);
                             }
@@ -817,7 +761,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
         width: 100%;
         background: $background;
         scroll-snap-align: none;
-
         /* Information légales */
         #legal{
             width:90%;
@@ -839,13 +782,11 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             .legalF{
                 display: flex;
                 flex-direction: column;
-
                 h3{
                     color: $color;
                     font-family: $font2;
                     font-size: 40px;
                 }
-
                 h4,p,a{
                     @include whiteR();
                     margin: 10px 0;
@@ -913,7 +854,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     font-size: 16px;
                 }
             }
-
             .copyright{
                 p{
                     font-size: 16px;
@@ -923,7 +863,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             }
         }
     }
-
     /* Info.html info01*/
     #infos01{
         background: $background;
@@ -932,20 +871,16 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
         @media all and (max-width:1200px){
             flex-direction: column;
         }
-
         /* Info 01 Côté Gauche */
         #IG01{
             min-height: 100vh;
             width:50%;
-        
             .wrapper{
                 height:100%;
                 width: 80%;
                 margin: 0 auto;
                 overflow: hidden;
                 @include centreWrapper();
-                
-            
                 h2{
                     @include whiteR();
                     font-size: 40px;
@@ -1005,7 +940,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
         @media all and (max-width:1200px){
             flex-direction: column;
         }
-
         /*info02 Côté gauche */
         #IG02{
             width:50%;
@@ -1026,13 +960,11 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             @media all and (max-width:1200px){
                 width:100%;
             }
-
             .wrapper{
                 width:80%;
                 margin:0 auto;
                 overflow: hidden;
                 @include centreWrapper();
-
                 /*flèche vers le haut*/
                 .up{
                     height:10vh;
@@ -1050,7 +982,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         font-size: 1.5em;
                     }
                 }
-
                 p{
                     @include whiteR();
                     margin-bottom: 30px;
@@ -1098,7 +1029,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 width: 100%;
                 order:1;
             }
-
             .wrapper{
                 width:80%;
                 margin:0 auto;
@@ -1117,7 +1047,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         font-size: 1.5em;
                     }
                 }
-
                 p{
                     @include whiteR();
                     font-size:18px;
@@ -1169,12 +1098,10 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
     #tickets_achat{
         background:$background;
         overflow: hidden;
-
         .wrapper{
             width:90%;
             margin:0 auto;
             @include centreWrapper();
-
             .titre{
                 margin-top: 125px;
                 display: flex;
@@ -1184,7 +1111,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     font-size: 40px;
                     margin-right:40px;
                 }
-
                 a{
                     display: block;
                     width:140px;
@@ -1213,7 +1139,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 {
                     grid-template-columns: 1fr;
                 }
-
                 /* ticket Carte */
                 .cardT{
                     margin: 25px 0;
@@ -1225,7 +1150,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         border-radius: 15px 15px 0 0;
                         border: solid 1px $color;
                     }
-
                     /* ticket description */
                     .ticketC{
                         width:100%;
@@ -1234,7 +1158,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         @include whiteR();
                         flex-direction: column;
                         border: solid 1px $color;
-                        
                         h4{
                             font-size: 40px;
                             @include whiteR();
@@ -1277,12 +1200,10 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
     /* artistes.html Artistes */
     #juillet07,#juillet08,#juillet09{
         background: $background;
-
         .wrapper{
             width:90%;
             margin:0 auto;
             @include centreWrapper();
-
             h3{
                 margin: 110px auto 20px auto;
                 @include whiteR();
@@ -1290,7 +1211,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 text-decoration: underline;
                 text-align: center;
             }
-
             .line_up{
                 display: flex;
                 flex-wrap: wrap;
@@ -1306,7 +1226,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     width: 100%;
                     justify-content: center;
                 }
-
                 /* Carte Complète */
                 .inner_card{
                     width:320px;
@@ -1317,7 +1236,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     transform-style: preserve-3d;
                     transition: all 0.5s;
                     cursor:pointer;
-
                     &:hover{
                         transform: perspective(600px) rotateY(180deg);
                     }
@@ -1327,7 +1245,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                             transform: perspective(600px);
                         }
                     }
-
                     .front_card{
                         height:100%;
                         width: 100%;
@@ -1337,6 +1254,9 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                             object-fit:cover;
                             border-radius: 15px 15px 0 0;
                         }
+                        .affiche{
+                            border: solid 1px white;
+                        }
                     }
                     .back_card{
                         background-color: rgb(255, 255, 255,30%);
@@ -1345,6 +1265,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         display: flex;
                         align-items: center;
                         flex-direction: column;
+                        text-shadow:1px 1px 1px black;
                         
                         h4,a{
                             margin-top:10px;
@@ -1381,21 +1302,17 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
     #cdw{
         background: $background;
         overflow: hidden;
-
         .wrapper{
             width:90%;
             margin:0 auto;
-
             /* présentation */
             .pres{
                 margin-top:125px;
                 display: flex;
                 flex-wrap: nowrap;
-
                 @media all and (max-width:1200px){
                     flex-direction: column;
                 }
-
                 .img{
                     width:500px;
                     height:80vh;
@@ -1453,7 +1370,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         div{
                             display: flex;
                             flex-direction: column;
-
                             a{
                                 text-decoration: none;
                                 margin:10px 20px;
@@ -1479,12 +1395,10 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         @media all and (max-width:768px){
                             grid-template-columns: 1fr 1fr;
                         }
-                        
                         a{
                             margin:10px 0;
                             text-align: center;
                             width:fit-content;
-
                             &:hover svg{
                                 fill: blueviolet;
                             }
