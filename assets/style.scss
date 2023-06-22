@@ -1191,7 +1191,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 align-items: center;
                 width:100%;
                 margin:0 auto;
-                @media all and (max-width:1600px){
+                @media all and (max-width:1700px){
                     width:70%
                 }
                 @media all and (max-width:1150px){
@@ -1211,7 +1211,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     &:hover{
                         transform: perspective(600px) rotateY(180deg);
                     }
-                    @media all and (max-width:1600px){
+                    @media all and (max-width:1700px){
                         &:hover{
                             transform: perspective(600px);
                         }
