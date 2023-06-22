@@ -1197,13 +1197,14 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 }
                 /* Carte Complète */
                 .card{
+                    margin: 20px;
                     &:hover .inner_card{
                         transform: perspective(600px) rotateY(180deg);
                     }
                     .inner_card{
                         width:320px;
                         height:70vh;
-                        margin: 20px;
+                        
                         position: relative;
                         transform: perspective(600px);
                         transform-style: preserve-3d;
