@@ -31,7 +31,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
 }
 /* Mixin Bouton Rouge */
 @mixin redButton{
-    background-color: #FC143A;
+    background-color: #8f080d;
     border: solid 1px white;
     text-decoration: none;
     @include whiteR();
@@ -142,7 +142,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
             width:106px;
             height:37px;
             font-size: 22px;
-            background-color: #181AD6;
+            background-color: #5d104b;
             border: solid 1px white;
             margin: auto 25px;
             @include whiteR();
@@ -304,6 +304,9 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         @include whiteR();
                         font-size: 20px;
                     }
+                    h5{
+                        font-weight: 900;
+                    }
                     &:hover{
                         border: solid 1px white;
                         p{
@@ -356,7 +359,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     font-size: 18px;
                     line-height: 35px;
                     margin-top:25px;
-                    text-align: justify;
+                    text-align: left;
 
                     strong,b{
                         font-size: 20px;
@@ -707,6 +710,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                             }
                             &:focus{
                                 background-color: rgb(0, 0, 0,20%);
+                                outline:none;
                             }
                             &[type="submit"]{
                                 @include redButton();
@@ -738,6 +742,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                             }
                             &:focus{
                                 background-color: rgb(0, 0, 0,20%);
+                                outline:none;
                             }
                         }
                     }
@@ -829,7 +834,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         fill: blueviolet;
                     }
                     svg{
-                        font-size: 3em;
+                        font-size: 2em;
                         fill:$color;
                     }
                 }
@@ -882,7 +887,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     line-height: 35px;
                     @include whiteR();
                     margin-bottom: 30px;
-                    text-align: justify;
+                    text-align: left;
                     strong{
                         font-weight: 900;
                     }
@@ -968,7 +973,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     margin-bottom: 30px;
                     line-height: 35px;
                     font-size: 18px;
-                    text-align: justify;
+                    text-align: left;
                     &:nth-child(6){
                         margin-bottom: 0;
                     }
@@ -1027,7 +1032,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     font-size:18px;
                     line-height: 35px;
                     margin-bottom: 30px;
-                    text-align: justify;
+                    text-align: left;
                     strong,b{
                         font-weight: 900;
                     }
@@ -1163,7 +1168,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 font-size: 30px;
                 margin: 20px auto;
                 @include redButton();
-                background-color: #181AD6;
+                background-color: #5d104b;
             }
         }
     }
@@ -1178,7 +1183,6 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                 margin: 110px auto 20px auto;
                 @include whiteR();
                 font-size: 40px;
-                text-decoration: underline;
                 text-align: center;
             }
             .line_up{
@@ -1200,6 +1204,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     margin: 20px;
                     &:hover .inner_card{
                         transform: perspective(600px) rotateY(180deg);
+                        -webkit-transform: perspective(600px) rotateY(180deg);
                     }
                     .inner_card{
                         width:320px;
@@ -1262,6 +1267,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                     /* Lors du click */
                     .active{
                         transform: perspective(600px) rotateY(180deg) !important;
+                        -webkit-transform: perspective(600px) rotateY(180deg) !important;
                     }
                 } 
             }
@@ -1313,8 +1319,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                         font-size: 20px;
                         margin: 40px 0;
                         line-height: 35px;
-                        text-align: justify;
-
+                        text-align: left;
                         strong{
                             font-size: 22px;
                         }
@@ -1365,7 +1370,7 @@ $background : linear-gradient(243.18deg,#C11212 0%,#0B0F7A 100%);
                                 fill: blueviolet;
                             }
                             svg{
-                                font-size: 4em;
+                                font-size: 3em;
                                 fill:$color;
                             }
                         }
